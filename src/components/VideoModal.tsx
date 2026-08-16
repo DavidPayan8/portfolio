@@ -12,9 +12,15 @@ interface VideoModalProps {
 export function VideoModal({ project, onClose }: VideoModalProps) {
   const { lang, t } = useI18n();
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     closeButtonRef.current?.focus();
+    // The `autoplay` attribute alone is unreliable for non-muted video —
+    // call play() explicitly, still close enough to the click that opened
+    // the modal to count as a user gesture. Ignore rejection: the native
+    // controls are visible either way, so playback is one click away.
+    videoRef.current?.play().catch(() => {});
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") onClose();
@@ -52,10 +58,10 @@ export function VideoModal({ project, onClose }: VideoModalProps) {
         </button>
 
         <video
+          ref={videoRef}
           className="video-modal-video"
           src={project.videoSrcFull}
           controls
-          autoPlay
           playsInline
         />
 
