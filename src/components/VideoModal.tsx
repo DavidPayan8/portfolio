@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import type { Project } from "../data/projects";
 import { useI18n } from "../i18n/I18nContext";
 import { CloseIcon } from "./icons/CloseIcon";
@@ -27,7 +28,7 @@ export function VideoModal({ project, onClose }: VideoModalProps) {
     };
   }, [onClose]);
 
-  return (
+  return createPortal(
     <div
       className="video-modal-backdrop"
       onClick={(event) => {
@@ -65,6 +66,7 @@ export function VideoModal({ project, onClose }: VideoModalProps) {
           <p className="font-body-md text-body-md text-on-surface-variant">{project.description[lang]}</p>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
