@@ -5,6 +5,10 @@ export interface Project {
   id: string;
   /** false when there's no demo video planned yet — hides the play-button placeholder. */
   hasMedia: boolean;
+  /** Short muted loop shown in the card background. Requires hasMedia: true. */
+  videoSrc?: string;
+  /** Full recording with audio, shown in the "maximize" modal. Requires videoSrc. */
+  videoSrcFull?: string;
   badge?: LocalizedText;
   badgeVariant?: "live" | "progress";
   title: LocalizedText;
@@ -16,6 +20,8 @@ export const projects: Project[] = [
   {
     id: "kiosk-ecosystem",
     hasMedia: true,
+    videoSrc: "/videos/kiosk-ecosystem-preview.mp4",
+    videoSrcFull: "/videos/kiosk-ecosystem.mp4",
     badgeVariant: "live",
     badge: { es: "Sistema en producción", en: "Live system" },
     title: { es: "Ecosistema de Kioscos de Autoservicio", en: "Self-Service Kiosk Ecosystem" },

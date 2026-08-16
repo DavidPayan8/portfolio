@@ -4,11 +4,13 @@ interface UseInViewOptions {
   threshold?: number;
   rootMargin?: string;
   once?: boolean;
+  /** Safety net: force visible after this many ms, in case the observer never fires. */
+  fallbackDelayMs?: number;
 }
 
 /** Tracks whether an element has scrolled into the viewport, via IntersectionObserver. */
 export function useInView<T extends HTMLElement>(options: UseInViewOptions = {}) {
-  const { threshold = 0.15, rootMargin = "0px 0px -10% 0px", once = true } = options;
+  const { threshold = 0, rootMargin = "0px", once = true, fallbackDelayMs = 1500 } = options;
   const ref = useRef<T | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -36,8 +38,16 @@ export function useInView<T extends HTMLElement>(options: UseInViewOptions = {})
     );
 
     observer.observe(node);
-    return () => observer.disconnect();
-  }, [threshold, rootMargin, once]);
+
+    // Never leave content permanently hidden if the observer doesn't fire
+    // for some reason (short pages, layout edge cases, etc).
+    const fallback = window.setTimeout(() => setIsVisible(true), fallbackDelayMs);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
+  }, [threshold, rootMargin, once, fallbackDelayMs]);
 
   return { ref, isVisible };
 }

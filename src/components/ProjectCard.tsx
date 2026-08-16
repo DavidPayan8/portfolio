@@ -1,12 +1,15 @@
-import { useRef, type MouseEvent } from "react";
+import { useRef, useState, type MouseEvent } from "react";
 import type { Project } from "../data/projects";
 import { useI18n } from "../i18n/I18nContext";
+import { ExpandIcon } from "./icons/ExpandIcon";
 import { TagPill } from "./TagPill";
+import { VideoModal } from "./VideoModal";
 
 export function ProjectCard({ project }: { project: Project }) {
-  const { lang } = useI18n();
+  const { lang, t } = useI18n();
   const isProgress = project.badgeVariant === "progress";
   const mediaRef = useRef<HTMLDivElement>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   function handleMouseMove(event: MouseEvent<HTMLDivElement>) {
     const el = mediaRef.current;
@@ -24,15 +27,40 @@ export function ProjectCard({ project }: { project: Project }) {
       <div
         ref={mediaRef}
         onMouseMove={handleMouseMove}
-        className="card-media absolute inset-0 z-0 media-placeholder opacity-70 transition-opacity duration-700 flex items-start justify-center pt-20"
+        className={`card-media absolute inset-0 z-0 transition-opacity duration-700 flex items-start justify-center pt-20 ${
+          project.videoSrc ? "" : "media-placeholder opacity-70"
+        }`}
       >
-        {project.hasMedia && (
-          <div
-            className="play-badge w-16 h-16 rounded-full border border-outline-variant/60 flex items-center justify-center transition-transform duration-500"
-            aria-hidden="true"
+        {project.videoSrc ? (
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            src={project.videoSrc}
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        ) : (
+          project.hasMedia && (
+            <div
+              className="play-badge w-16 h-16 rounded-full border border-outline-variant/60 flex items-center justify-center transition-transform duration-500"
+              aria-hidden="true"
+            >
+              <div className="w-0 h-0 border-y-8 border-y-transparent border-l-[14px] border-l-on-surface-variant ml-1" />
+            </div>
+          )
+        )}
+
+        {project.videoSrcFull && (
+          <button
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="video-maximize-btn"
+            aria-label={t.maximizeLabel}
+            title={t.maximizeLabel}
           >
-            <div className="w-0 h-0 border-y-8 border-y-transparent border-l-[14px] border-l-on-surface-variant ml-1" />
-          </div>
+            <ExpandIcon size={18} />
+          </button>
         )}
       </div>
       <div className="relative z-10 flex flex-col justify-end h-full p-8 md:p-10 bg-gradient-to-t from-background/95 via-background/50 to-transparent">
@@ -57,6 +85,8 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
       </div>
+
+      {isModalOpen && <VideoModal project={project} onClose={() => setIsModalOpen(false)} />}
     </article>
   );
 }
