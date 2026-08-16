@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+.project-card:hover .project-border { border-color: #00d2fd; }
+.project-card:hover .card-media { opacity: 0.35; }
+.project-card:hover .play-badge { transform: scale(1.06); }
+
+.media-placeholder {
+    background-image:
+        linear-gradient(135deg, rgba(0,210,253,0.06) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(0,210,253,0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-color: #1b1b1c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in-up { animation: none; opacity: 1; transform: none; }
+}
