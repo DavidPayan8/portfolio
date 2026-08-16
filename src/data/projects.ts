@@ -3,9 +3,8 @@ import type { Tag } from "./tags";
 
 export interface Project {
   id: string;
-  size: "large" | "small";
-  heightClass: string;
-  delayClass: string;
+  /** false when there's no demo video planned yet — hides the play-button placeholder. */
+  hasMedia: boolean;
   badge?: LocalizedText;
   badgeVariant?: "live" | "progress";
   title: LocalizedText;
@@ -16,9 +15,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "kiosk-ecosystem",
-    size: "large",
-    heightClass: "h-[500px]",
-    delayClass: "delay-100",
+    hasMedia: true,
     badgeVariant: "live",
     badge: { es: "Sistema en producción", en: "Live system" },
     title: { es: "Ecosistema de Kioscos de Autoservicio", en: "Self-Service Kiosk Ecosystem" },
@@ -36,9 +33,7 @@ export const projects: Project[] = [
   },
   {
     id: "mobile-time-tracking",
-    size: "small",
-    heightClass: "h-[500px]",
-    delayClass: "delay-200",
+    hasMedia: true,
     title: { es: "App de Fichaje Móvil (Flutter)", en: "Mobile Time Tracking (Flutter)" },
     description: {
       es: "App de fichaje por geolocalización reconstruida como app nativa multiplataforma en Flutter — mi propio port independiente del sistema original, publicado para iOS y Android.",
@@ -52,9 +47,7 @@ export const projects: Project[] = [
   },
   {
     id: "work-order-app",
-    size: "small",
-    heightClass: "h-[400px]",
-    delayClass: "delay-300",
+    hasMedia: true,
     title: { es: "App de Gestión de Órdenes de Trabajo", en: "Work Order & Construction App" },
     description: {
       es: "App móvil para gestionar órdenes de trabajo de construcción, sincronizada con el ERP de la empresa para actualización de tareas, sincronización de datos y reporting.",
@@ -68,9 +61,7 @@ export const projects: Project[] = [
   },
   {
     id: "redsys-payments",
-    size: "large",
-    heightClass: "h-[400px]",
-    delayClass: "delay-400",
+    hasMedia: false,
     badgeVariant: "progress",
     badge: { es: "En curso", en: "In progress" },
     title: { es: "Integración de Pagos Redsys", en: "Redsys Payment Integration" },

@@ -61,7 +61,7 @@ export default {
       },
       spacing: {
         "margin-mobile": "20px",
-        "container-max": "1200px",
+        "container-max": "1360px",
         "gutter": "24px",
         "base": "8px",
         "stack-lg": "80px"
@@ -82,8 +82,5 @@ export default {
       }
     }
   },
-  safelist: [
-    { pattern: /delay-(100|200|300|400)/ },
-  ],
   plugins: [],
 };

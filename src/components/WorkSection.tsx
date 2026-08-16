@@ -1,6 +1,6 @@
-import { projects } from "../data/projects";
 import { useI18n } from "../i18n/I18nContext";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectCarousel } from "./ProjectCarousel";
+import { Reveal } from "./Reveal";
 
 export function WorkSection() {
   const { t } = useI18n();
@@ -10,11 +10,9 @@ export function WorkSection() {
       <h2 id="work-heading" className="sr-only">
         {t.workSrHeading}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
+      <Reveal>
+        <ProjectCarousel />
+      </Reveal>
     </section>
   );
 }

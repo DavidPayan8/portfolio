@@ -4,7 +4,7 @@ export function Hero() {
   const { t } = useI18n();
 
   return (
-    <header className="mb-24 fade-in-up">
+    <header className="mb-24 hero-reveal">
       <div className="flex items-center gap-3 mb-6">
         <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse" aria-hidden="true" />
         <span className="font-label-caps text-label-caps text-secondary-container tracking-widest uppercase">

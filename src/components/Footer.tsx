@@ -2,13 +2,14 @@ import { useI18n } from "../i18n/I18nContext";
 import { GitHubIcon } from "./icons/GitHubIcon";
 import { LinkedInIcon } from "./icons/LinkedInIcon";
 import { MailIcon } from "./icons/MailIcon";
+import { Reveal } from "./Reveal";
 
 export function Footer() {
   const { t } = useI18n();
 
   return (
     <footer id="contact" className="w-full py-stack-lg border-t border-outline-variant/20 bg-surface-container mt-auto">
-      <div className="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-base">
+      <Reveal className="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-base">
         <div className="font-label-caps text-label-caps text-on-surface uppercase">{t.footerCopyright}</div>
         <div className="flex gap-6">
           <a
@@ -40,7 +41,7 @@ export function Footer() {
             <GitHubIcon />
           </a>
         </div>
-      </div>
+      </Reveal>
     </footer>
   );
 }
