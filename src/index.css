@@ -237,9 +237,12 @@
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background: transparent;
-    border: 2px solid #00d2fd;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(229, 226, 225, 0.14);
+    border: 1px solid rgba(229, 226, 225, 0.3);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+.lang-switch:hover .lang-switch-thumb {
+    background: rgba(229, 226, 225, 0.22);
 }
 .lang-switch[aria-checked="true"] .lang-switch-thumb { transform: translateX(32px); }
 

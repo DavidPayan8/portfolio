@@ -22,7 +22,7 @@ export function ProjectCard({ project }: { project: Project }) {
   }
 
   return (
-    <article className="project-card relative rounded overflow-hidden bg-surface flex flex-col w-full min-h-[440px]">
+    <article className="project-card relative rounded overflow-hidden bg-surface flex flex-col justify-end w-full min-h-[440px]">
       <div className="project-border absolute inset-0 border border-outline-variant/30 rounded z-20 pointer-events-none transition-colors duration-500" />
       <div
         ref={mediaRef}
@@ -63,7 +63,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </button>
         )}
       </div>
-      <div className="relative z-10 flex flex-col justify-end h-full p-8 md:p-10 bg-gradient-to-t from-background/95 via-background/50 to-transparent">
+      <div className="relative z-10 p-8 md:p-10 bg-gradient-to-t from-background/95 via-background/50 to-transparent pointer-events-none">
         {project.badge && (
           <div className="flex items-center gap-3 mb-4">
             <span
