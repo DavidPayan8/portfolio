@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html class="dark" lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>David Payán — Full Stack Developer</title>
-<meta name="description" content="David Payán is a Full Stack Developer based in Seville, Spain, building self-service kiosk ecosystems, cross-platform mobile apps, and ERP-integrated systems."/>
+<title data-i18n="meta-title">David Payán — Desarrollador Full Stack</title>
+<meta name="description" data-i18n-attr="content:meta-description" content="David Payán es un Desarrollador Full Stack afincado en Sevilla, España, que construye ecosistemas de kioscos de autoservicio, apps móviles multiplataforma y sistemas integrados con ERP."/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://davidpayan.dev/"/>
 
 <!-- Open Graph / social preview -->
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="David Payán — Full Stack Developer"/>
-<meta property="og:description" content="Self-service kiosk ecosystems, cross-platform mobile apps, and ERP-integrated systems, built end to end."/>
+<meta property="og:title" data-i18n-attr="content:og-title" content="David Payán — Desarrollador Full Stack"/>
+<meta property="og:description" data-i18n-attr="content:og-description" content="Ecosistemas de kioscos de autoservicio, apps móviles multiplataforma y sistemas integrados con ERP, construidos de principio a fin."/>
 <meta property="og:image" content="/assets/og-cover.png"/>
 <meta property="og:url" content="https://davidpayan.dev/"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -29,20 +29,23 @@
 </head>
 <body class="bg-background text-on-surface antialiased selection:bg-secondary-container selection:text-background min-h-screen flex flex-col">
 
-<a href="#work" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] bg-secondary-container text-background px-4 py-2 rounded">Skip to work</a>
+<a href="#work" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] bg-secondary-container text-background px-4 py-2 rounded" data-i18n="skip-link">Saltar al trabajo</a>
 
 <!-- Top Nav -->
 <nav class="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-outline-variant/30 z-50 transition-all duration-300 ease-in-out">
 <div class="flex justify-between items-center px-gutter py-base max-w-container-max mx-auto h-16">
 <a href="#top" class="font-label-caps text-label-caps tracking-widest text-on-surface uppercase">David Payán</a>
 <div class="hidden md:flex gap-8 items-center" role="navigation" aria-label="Primary">
-<a class="font-label-caps text-label-caps text-on-surface border-b-2 border-on-surface pb-1 uppercase" href="#work">Work</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors duration-300 uppercase" href="#about">About</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors duration-300 uppercase" href="#contact">Contact</a>
+<a class="font-label-caps text-label-caps text-on-surface border-b-2 border-on-surface pb-1 uppercase" href="#work" data-i18n="nav-work">Trabajo</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors duration-300 uppercase" href="#about" data-i18n="nav-about">Sobre mí</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors duration-300 uppercase" href="#contact" data-i18n="nav-contact">Contacto</a>
 </div>
-<a href="/assets/CV_David_Payan_EN.docx" class="bg-surface-container-high text-on-surface border border-outline-variant/50 hover:bg-surface-bright hover:border-outline px-6 py-2 rounded font-label-caps text-label-caps transition-all duration-300 uppercase" download>
-    Resume
+<div class="flex items-center gap-4">
+<button id="lang-toggle" type="button" class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors duration-300 uppercase border border-outline-variant/50 rounded px-4 py-2" data-current-lang="es" aria-label="Switch to English">EN</button>
+<a href="/assets/CV_David_Payan_EN.docx" class="bg-surface-container-high text-on-surface border border-outline-variant/50 hover:bg-surface-bright hover:border-outline px-6 py-2 rounded font-label-caps text-label-caps transition-all duration-300 uppercase" download data-i18n="nav-resume">
+    CV
 </a>
+</div>
 </div>
 </nav>
 
@@ -52,23 +55,23 @@
 <header class="mb-24 fade-in-up">
 <div class="flex items-center gap-3 mb-6">
 <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse" aria-hidden="true"></span>
-<span class="font-label-caps text-label-caps text-secondary-container tracking-widest uppercase">Available for new opportunities</span>
+<span class="font-label-caps text-label-caps text-secondary-container tracking-widest uppercase" data-i18n="badge-available">Disponible para nuevas oportunidades</span>
 </div>
-<h1 class="font-headline-xl text-headline-xl text-on-surface mb-6 max-w-3xl leading-tight">
-    Full stack systems, built end to end — from the kiosk screen to the database.
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-6 max-w-3xl leading-tight" data-i18n="h1">
+    Sistemas full stack, construidos de principio a fin — desde la pantalla del kiosco hasta la base de datos.
 </h1>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
-    I'm David Payán, a Full Stack Developer in Seville, Spain. I build web platforms, cross-platform mobile apps, and the ERP-connected systems that tie them together — the kind of software that has to run reliably in a real restaurant, on a real job site, every day.
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl" data-i18n="intro-p">
+    Soy David Payán, Desarrollador Full Stack en Sevilla, España. Construyo plataformas web, apps móviles multiplataforma y los sistemas conectados a ERP que los mantienen unidos — el tipo de software que tiene que funcionar de forma fiable en un restaurante real, en una obra real, todos los días.
 </p>
 <div class="flex flex-wrap gap-4 mt-8">
-<a href="#work" class="bg-on-surface text-background hover:opacity-90 px-6 py-3 rounded font-label-caps text-label-caps transition-opacity duration-300 uppercase">See the work</a>
-<a href="#contact" class="border border-outline-variant text-secondary-container hover:border-secondary-container px-6 py-3 rounded font-label-caps text-label-caps transition-colors duration-300 uppercase">Get in touch</a>
+<a href="#work" class="bg-on-surface text-background hover:opacity-90 px-6 py-3 rounded font-label-caps text-label-caps transition-opacity duration-300 uppercase" data-i18n="cta-work">Ver el trabajo</a>
+<a href="#contact" class="border border-outline-variant text-secondary-container hover:border-secondary-container px-6 py-3 rounded font-label-caps text-label-caps transition-colors duration-300 uppercase" data-i18n="cta-contact">Contactar</a>
 </div>
 </header>
 
 <!-- Work -->
 <section id="work" aria-labelledby="work-heading">
-<h2 id="work-heading" class="sr-only">Selected work</h2>
+<h2 id="work-heading" class="sr-only" data-i18n="work-sr-heading">Trabajos seleccionados</h2>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 
 <!-- Project 1: Kiosk Ecosystem (large) -->
@@ -83,18 +86,18 @@
 <div class="relative z-10 flex flex-col justify-end h-full p-8 bg-gradient-to-t from-background/95 via-background/50 to-transparent">
 <div class="flex items-center gap-3 mb-4">
 <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse" aria-hidden="true"></span>
-<span class="font-label-caps text-label-caps text-secondary-container tracking-widest uppercase">Live system</span>
+<span class="font-label-caps text-label-caps text-secondary-container tracking-widest uppercase" data-i18n="p1-badge">Sistema en producción</span>
 </div>
-<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Self-Service Kiosk Ecosystem</h3>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-4">
-    A full ordering platform for quick-service restaurants: the customer-facing kiosk, a remote device management panel, a WPF POS and kitchen display app, a queue &amp; calling system, and a digital signage manager — standalone or fully wired into the client's ERP.
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2" data-i18n="p1-title">Ecosistema de Kioscos de Autoservicio</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-4" data-i18n="p1-desc">
+    Una plataforma de pedidos completa para restaurantes de comida rápida: el kiosco de cara al cliente, un panel remoto de gestión de dispositivos, una app de TPV y pantalla de cocina en WPF, un sistema de turnos y llamada, y un gestor de cartelería digital — de forma independiente o totalmente integrada con el ERP del cliente.
 </p>
 <div class="flex flex-wrap gap-2" aria-label="Technologies used">
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Angular</span>
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Node.js</span>
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">WPF / .NET</span>
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">SQL Server</span>
-<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">ERP integration</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1" data-i18n="tag-erp">Integración ERP</span>
 </div>
 </div>
 </article>
@@ -109,14 +112,14 @@
     </div>
 </div>
 <div class="relative z-10 flex flex-col justify-end h-full p-8 bg-gradient-to-t from-background/95 via-background/50 to-transparent">
-<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2 text-2xl">Mobile Time Tracking (Flutter)</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">
-    Geolocation-based clock-in app rebuilt as a native cross-platform Flutter app — my own independent port of the original system, shipped for iOS and Android.
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2 text-2xl" data-i18n="p2-title">App de Fichaje Móvil (Flutter)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4" data-i18n="p2-desc">
+    App de fichaje por geolocalización reconstruida como app nativa multiplataforma en Flutter — mi propio port independiente del sistema original, publicado para iOS y Android.
 </p>
 <div class="flex flex-wrap gap-2" aria-label="Technologies used">
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Flutter</span>
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Dart</span>
-<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Geolocation</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1" data-i18n="tag-geo">Geolocalización</span>
 </div>
 </div>
 </article>
@@ -131,13 +134,13 @@
     </div>
 </div>
 <div class="relative z-10 flex flex-col justify-end h-full p-8 bg-gradient-to-t from-background/95 via-background/50 to-transparent">
-<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2 text-2xl">Work Order &amp; Construction App</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">
-    Mobile app for managing construction work orders, synced with the company ERP for task updates, data sync, and reporting.
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2 text-2xl" data-i18n="p3-title">App de Gestión de Órdenes de Trabajo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4" data-i18n="p3-desc">
+    App móvil para gestionar órdenes de trabajo de construcción, sincronizada con el ERP de la empresa para actualización de tareas, sincronización de datos y reporting.
 </p>
 <div class="flex flex-wrap gap-2" aria-label="Technologies used">
-<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Mobile</span>
-<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">ERP integration</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1" data-i18n="tag-mobile">Móvil</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1" data-i18n="tag-erp">Integración ERP</span>
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">REST APIs</span>
 </div>
 </div>
@@ -155,15 +158,15 @@
 <div class="relative z-10 flex flex-col justify-end h-full p-8 bg-gradient-to-t from-background/95 via-background/50 to-transparent">
 <div class="flex items-center gap-3 mb-4">
 <span class="w-2 h-2 rounded-full bg-outline-variant" aria-hidden="true"></span>
-<span class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">In progress</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase" data-i18n="p4-badge">En curso</span>
 </div>
-<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Redsys Payment Integration</h3>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-4">
-    Adding secure card-payment checkout to the kiosk ecosystem via the Redsys payment gateway.
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2" data-i18n="p4-title">Integración de Pagos Redsys</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-4" data-i18n="p4-desc">
+    Añadiendo pago seguro con tarjeta al ecosistema de kioscos a través de la pasarela de pago Redsys.
 </p>
 <div class="flex flex-wrap gap-2" aria-label="Technologies used">
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Redsys</span>
-<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Payments</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1" data-i18n="tag-payments">Pagos</span>
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Node.js</span>
 </div>
 </div>
@@ -176,11 +179,11 @@
 <section id="about" class="mt-stack-lg fade-in-up" aria-labelledby="about-heading">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 <div class="md:col-span-4">
-<h2 id="about-heading" class="font-headline-lg text-headline-lg text-on-surface mb-4">About</h2>
+<h2 id="about-heading" class="font-headline-lg text-headline-lg text-on-surface mb-4" data-i18n="about-heading">Sobre mí</h2>
 </div>
 <div class="md:col-span-8">
-<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mb-4">
-    Full Stack Engineer at Kong Consulting in Seville, working across Angular, Node.js, and Laravel on the web side, Flutter on mobile, and SQL Server on data. I like taking a system from a whiteboard idea to something that runs unattended in production — kiosks in restaurants, apps on job sites, dashboards that don't break at 2am.
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mb-4" data-i18n="about-p">
+    Ingeniero Full Stack en Kong Consulting, en Sevilla, trabajando con Angular, Node.js y Laravel en el lado web, Flutter en móvil, y SQL Server en datos. Me gusta llevar un sistema desde una idea en la pizarra hasta algo que funciona sin supervisión en producción — kioscos en restaurantes, apps en obras, dashboards que no se caen a las 2 de la madrugada.
 </p>
 <div class="flex flex-wrap gap-2 mt-6" aria-label="Core skills">
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Angular</span>
@@ -188,9 +191,10 @@
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Laravel</span>
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Flutter / Dart</span>
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">SQL Server</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1" data-i18n-attr="title:vb6-note" title="VB6 fue el precursor de .NET">VB6 → .NET</span>
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">Azure DevOps / CI-CD</span>
 <span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">REST APIs</span>
-<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1">ERP integration</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-2 py-1" data-i18n="tag-erp">Integración ERP</span>
 </div>
 </div>
 </div>
@@ -201,13 +205,19 @@
 <!-- Footer / Contact -->
 <footer id="contact" class="w-full py-stack-lg border-t border-outline-variant/20 bg-surface-container mt-auto">
 <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-base">
-<div class="font-label-caps text-label-caps text-on-surface uppercase">
-    © 2026 David Payán. Seville, Spain.
+<div class="font-label-caps text-label-caps text-on-surface uppercase" data-i18n="footer-copyright">
+    © 2026 David Payán. Sevilla, España.
 </div>
 <div class="flex gap-6">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-200" href="mailto:davidpayanalvarado@gmail.com">Email</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-200" href="https://www.linkedin.com/in/david-pay%C3%A1n-alvarado-39a488252/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors duration-200" href="https://github.com/DavidPayan8" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-200" href="mailto:davidpayanalvarado@gmail.com" data-i18n-attr="aria-label:social-email;title:social-email" aria-label="Correo electrónico" title="Correo electrónico">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-200" href="https://www.linkedin.com/in/david-pay%C3%A1n-alvarado-39a488252/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-200" href="https://github.com/DavidPayan8" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.221-.253-4.556-1.113-4.556-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.747-1.026 2.747-1.026.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.523 2 12 2z"></path></svg>
+</a>
 </div>
 </div>
 </footer>
@@ -229,8 +239,146 @@
     "https://www.linkedin.com/in/david-pay%C3%A1n-alvarado-39a488252/",
     "https://github.com/DavidPayan8"
   ],
-  "knowsAbout": ["Angular", "Node.js", "Laravel", "Flutter", "SQL Server", "Azure DevOps", "REST APIs"]
+  "knowsAbout": ["Angular", "Node.js", "Laravel", "Flutter", "SQL Server", "Azure DevOps", "REST APIs", "VB6", ".NET"]
 }
+</script>
+
+<!-- Lightweight ES/EN toggle: no build step, default content is Spanish, English lives in this dictionary -->
+<script>
+(function () {
+  var translations = {
+    es: {
+      "meta-title": "David Payán — Desarrollador Full Stack",
+      "meta-description": "David Payán es un Desarrollador Full Stack afincado en Sevilla, España, que construye ecosistemas de kioscos de autoservicio, apps móviles multiplataforma y sistemas integrados con ERP.",
+      "og-title": "David Payán — Desarrollador Full Stack",
+      "og-description": "Ecosistemas de kioscos de autoservicio, apps móviles multiplataforma y sistemas integrados con ERP, construidos de principio a fin.",
+      "skip-link": "Saltar al trabajo",
+      "nav-work": "Trabajo",
+      "nav-about": "Sobre mí",
+      "nav-contact": "Contacto",
+      "nav-resume": "CV",
+      "badge-available": "Disponible para nuevas oportunidades",
+      "h1": "Sistemas full stack, construidos de principio a fin — desde la pantalla del kiosco hasta la base de datos.",
+      "intro-p": "Soy David Payán, Desarrollador Full Stack en Sevilla, España. Construyo plataformas web, apps móviles multiplataforma y los sistemas conectados a ERP que los mantienen unidos — el tipo de software que tiene que funcionar de forma fiable en un restaurante real, en una obra real, todos los días.",
+      "cta-work": "Ver el trabajo",
+      "cta-contact": "Contactar",
+      "work-sr-heading": "Trabajos seleccionados",
+      "p1-badge": "Sistema en producción",
+      "p1-title": "Ecosistema de Kioscos de Autoservicio",
+      "p1-desc": "Una plataforma de pedidos completa para restaurantes de comida rápida: el kiosco de cara al cliente, un panel remoto de gestión de dispositivos, una app de TPV y pantalla de cocina en WPF, un sistema de turnos y llamada, y un gestor de cartelería digital — de forma independiente o totalmente integrada con el ERP del cliente.",
+      "p2-title": "App de Fichaje Móvil (Flutter)",
+      "p2-desc": "App de fichaje por geolocalización reconstruida como app nativa multiplataforma en Flutter — mi propio port independiente del sistema original, publicado para iOS y Android.",
+      "p3-title": "App de Gestión de Órdenes de Trabajo",
+      "p3-desc": "App móvil para gestionar órdenes de trabajo de construcción, sincronizada con el ERP de la empresa para actualización de tareas, sincronización de datos y reporting.",
+      "p4-badge": "En curso",
+      "p4-title": "Integración de Pagos Redsys",
+      "p4-desc": "Añadiendo pago seguro con tarjeta al ecosistema de kioscos a través de la pasarela de pago Redsys.",
+      "about-heading": "Sobre mí",
+      "about-p": "Ingeniero Full Stack en Kong Consulting, en Sevilla, trabajando con Angular, Node.js y Laravel en el lado web, Flutter en móvil, y SQL Server en datos. Me gusta llevar un sistema desde una idea en la pizarra hasta algo que funciona sin supervisión en producción — kioscos en restaurantes, apps en obras, dashboards que no se caen a las 2 de la madrugada.",
+      "tag-erp": "Integración ERP",
+      "tag-mobile": "Móvil",
+      "tag-geo": "Geolocalización",
+      "tag-payments": "Pagos",
+      "vb6-note": "VB6 fue el precursor de .NET",
+      "footer-copyright": "© 2026 David Payán. Sevilla, España.",
+      "social-email": "Correo electrónico",
+      "lang-toggle-label": "Switch to English"
+    },
+    en: {
+      "meta-title": "David Payán — Full Stack Developer",
+      "meta-description": "David Payán is a Full Stack Developer based in Seville, Spain, building self-service kiosk ecosystems, cross-platform mobile apps, and ERP-integrated systems.",
+      "og-title": "David Payán — Full Stack Developer",
+      "og-description": "Self-service kiosk ecosystems, cross-platform mobile apps, and ERP-integrated systems, built end to end.",
+      "skip-link": "Skip to work",
+      "nav-work": "Work",
+      "nav-about": "About",
+      "nav-contact": "Contact",
+      "nav-resume": "Resume",
+      "badge-available": "Available for new opportunities",
+      "h1": "Full stack systems, built end to end — from the kiosk screen to the database.",
+      "intro-p": "I'm David Payán, a Full Stack Developer in Seville, Spain. I build web platforms, cross-platform mobile apps, and the ERP-connected systems that tie them together — the kind of software that has to run reliably in a real restaurant, on a real job site, every day.",
+      "cta-work": "See the work",
+      "cta-contact": "Get in touch",
+      "work-sr-heading": "Selected work",
+      "p1-badge": "Live system",
+      "p1-title": "Self-Service Kiosk Ecosystem",
+      "p1-desc": "A full ordering platform for quick-service restaurants: the customer-facing kiosk, a remote device management panel, a WPF POS and kitchen display app, a queue & calling system, and a digital signage manager — standalone or fully wired into the client's ERP.",
+      "p2-title": "Mobile Time Tracking (Flutter)",
+      "p2-desc": "Geolocation-based clock-in app rebuilt as a native cross-platform Flutter app — my own independent port of the original system, shipped for iOS and Android.",
+      "p3-title": "Work Order & Construction App",
+      "p3-desc": "Mobile app for managing construction work orders, synced with the company ERP for task updates, data sync, and reporting.",
+      "p4-badge": "In progress",
+      "p4-title": "Redsys Payment Integration",
+      "p4-desc": "Adding secure card-payment checkout to the kiosk ecosystem via the Redsys payment gateway.",
+      "about-heading": "About",
+      "about-p": "Full Stack Engineer at Kong Consulting in Seville, working across Angular, Node.js, and Laravel on the web side, Flutter on mobile, and SQL Server on data. I like taking a system from a whiteboard idea to something that runs unattended in production — kiosks in restaurants, apps on job sites, dashboards that don't break at 2am.",
+      "tag-erp": "ERP integration",
+      "tag-mobile": "Mobile",
+      "tag-geo": "Geolocation",
+      "tag-payments": "Payments",
+      "vb6-note": "VB6 was the predecessor of .NET",
+      "footer-copyright": "© 2026 David Payán. Seville, Spain.",
+      "social-email": "Email",
+      "lang-toggle-label": "Cambiar a español"
+    }
+  };
+
+  function applyLanguage(lang) {
+    if (lang !== "es" && lang !== "en") lang = "es";
+    document.documentElement.lang = lang;
+    var dict = translations[lang];
+
+    var textNodes = document.querySelectorAll("[data-i18n]");
+    for (var i = 0; i < textNodes.length; i++) {
+      var el = textNodes[i];
+      var key = el.getAttribute("data-i18n");
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    }
+
+    var attrNodes = document.querySelectorAll("[data-i18n-attr]");
+    for (var j = 0; j < attrNodes.length; j++) {
+      var node = attrNodes[j];
+      var pairs = node.getAttribute("data-i18n-attr").split(";");
+      for (var k = 0; k < pairs.length; k++) {
+        var parts = pairs[k].split(":");
+        var attr = parts[0], key2 = parts[1];
+        if (dict[key2] !== undefined) node.setAttribute(attr, dict[key2]);
+      }
+    }
+
+    var toggleBtn = document.getElementById("lang-toggle");
+    if (toggleBtn) {
+      var other = lang === "es" ? "en" : "es";
+      toggleBtn.textContent = other.toUpperCase();
+      toggleBtn.setAttribute("aria-label", dict["lang-toggle-label"]);
+      toggleBtn.setAttribute("data-current-lang", lang);
+    }
+
+    try { localStorage.setItem("site-lang", lang); } catch (e) {}
+  }
+
+  var initialLang = "es";
+  try {
+    var saved = localStorage.getItem("site-lang");
+    if (saved === "en" || saved === "es") initialLang = saved;
+  } catch (e) {}
+
+  if (initialLang !== "es") applyLanguage(initialLang);
+  else {
+    var toggleBtnInit = document.getElementById("lang-toggle");
+    if (toggleBtnInit) toggleBtnInit.setAttribute("aria-label", translations.es["lang-toggle-label"]);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var toggleBtn = document.getElementById("lang-toggle");
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", function () {
+        var current = toggleBtn.getAttribute("data-current-lang") || "es";
+        applyLanguage(current === "es" ? "en" : "es");
+      });
+    }
+  });
+})();
 </script>
 </body>
 </html>
