@@ -19,7 +19,7 @@ export interface UiText {
   carouselPrevLabel: string;
   carouselNextLabel: string;
   maximizeLabel: string;
-  closeLabel: string;
+  modalCloseHint: string;
   aboutHeading: string;
   aboutParagraph: string;
   educationHeading: string;
@@ -52,7 +52,7 @@ export const translations: Record<Lang, UiText> = {
     carouselPrevLabel: "Proyecto anterior",
     carouselNextLabel: "Siguiente proyecto",
     maximizeLabel: "Ver a pantalla grande",
-    closeLabel: "Cerrar",
+    modalCloseHint: "Pulsa Escape o haz clic fuera del vídeo para cerrar",
     aboutHeading: "Sobre mí",
     aboutParagraph:
       "Ingeniero Full Stack en Kong Consulting, en Sevilla, con más de 2 años construyendo aplicaciones web escalables con Angular, Node.js y Laravel, apps móviles multiplataforma con Flutter, y sistemas conectados a ERP. Me gusta llevar un sistema desde una idea en la pizarra hasta algo que funciona sin supervisión en producción — kioscos en restaurantes, apps en obras, dashboards que no se caen a las 2 de la madrugada. Antes de esto pasé un verano (2023) trabajando en Londres, una experiencia que afinó mi inglés y mi manera de trabajar bajo presión en equipos internacionales.",
@@ -83,7 +83,7 @@ export const translations: Record<Lang, UiText> = {
     carouselPrevLabel: "Previous project",
     carouselNextLabel: "Next project",
     maximizeLabel: "View fullscreen",
-    closeLabel: "Close",
+    modalCloseHint: "Press Escape or click outside the video to close",
     aboutHeading: "About",
     aboutParagraph:
       "Full Stack Engineer at Kong Consulting in Seville, with 2+ years building scalable web applications with Angular, Node.js, and Laravel, cross-platform mobile apps with Flutter, and ERP-connected systems. I like taking a system from a whiteboard idea to something that runs unattended in production — kiosks in restaurants, apps on job sites, dashboards that don't break at 2am. Before that, I spent a summer (2023) working in London, which sharpened my English and how I work under pressure in international teams.",

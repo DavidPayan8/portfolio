@@ -84,7 +84,7 @@
     outline-offset: 2px;
 }
 
-/* Video modal */
+/* Video modal — opens like a camera iris/aperture, centered on the viewport */
 .video-modal-backdrop {
     position: fixed;
     inset: 0;
@@ -94,12 +94,11 @@
     justify-content: center;
     padding: 24px;
     background: rgba(10, 10, 10, 0.85);
-    backdrop-filter: blur(4px);
-    animation: modalFadeIn 0.25s ease both;
+    animation: irisOpen 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-@keyframes modalFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes irisOpen {
+    from { clip-path: circle(0% at 50% 50%); backdrop-filter: blur(0); }
+    to { clip-path: circle(75% at 50% 50%); backdrop-filter: blur(4px); }
 }
 .video-modal {
     position: relative;
@@ -114,11 +113,14 @@
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    animation: modalScaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: modalPopIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
-@keyframes modalScaleIn {
-    from { opacity: 0; transform: scale(0.96) translateY(8px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
+.video-modal:focus {
+    outline: none;
+}
+@keyframes modalPopIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 .video-modal-video {
     display: block;
@@ -132,25 +134,6 @@
     background: #1b1b1c;
     overflow-y: auto;
 }
-.video-modal-close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    z-index: 10;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background: rgba(19, 19, 19, 0.65);
-    color: #e5e2e1;
-    cursor: pointer;
-    transition: background-color 0.25s ease, border-color 0.25s ease;
-}
-.video-modal-close:hover { background: rgba(19, 19, 19, 0.9); border-color: #00d2fd; }
-.video-modal-close:focus-visible { outline: 2px solid #00d2fd; outline-offset: 2px; }
 
 @media (max-width: 768px) {
     .video-modal { width: 92vw; }

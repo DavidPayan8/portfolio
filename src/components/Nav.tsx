@@ -1,8 +1,12 @@
 import { useI18n } from "../i18n/I18nContext";
 import { LanguageToggle } from "./LanguageToggle";
 
+const NAV_LINK_CLASS =
+  "font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors duration-300 uppercase";
+
 export function Nav() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const resumeFile = lang === "es" ? "CV_David_Payan_ES.docx" : "CV_David_Payan_EN.docx";
 
   return (
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-outline-variant/30 z-50 transition-all duration-300 ease-in-out">
@@ -11,30 +15,21 @@ export function Nav() {
           David Payán
         </a>
         <div className="hidden md:flex gap-8 items-center" role="navigation" aria-label="Primary">
-          <a
-            className="font-label-caps text-label-caps text-on-surface border-b-2 border-on-surface pb-1 uppercase"
-            href="#work"
-          >
+          <a className={NAV_LINK_CLASS} href="#work">
             {t.navWork}
           </a>
-          <a
-            className="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors duration-300 uppercase"
-            href="#about"
-          >
+          <a className={NAV_LINK_CLASS} href="#about">
             {t.navAbout}
           </a>
-          <a
-            className="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors duration-300 uppercase"
-            href="#contact"
-          >
+          <a className={NAV_LINK_CLASS} href="#contact">
             {t.navContact}
           </a>
         </div>
         <div className="flex items-center gap-4">
           <LanguageToggle />
           <a
-            href="/CV_David_Payan_EN.docx"
-            download
+            href={`/${resumeFile}`}
+            download={resumeFile}
             className="bg-surface-container-high text-on-surface border border-outline-variant/50 hover:bg-surface-bright hover:border-outline px-6 py-2 rounded font-label-caps text-label-caps transition-all duration-300 uppercase"
           >
             {t.navResume}

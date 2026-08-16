@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import type { Project } from "../data/projects";
 import { useI18n } from "../i18n/I18nContext";
-import { CloseIcon } from "./icons/CloseIcon";
 
 interface VideoModalProps {
   project: Project;
@@ -11,11 +10,11 @@ interface VideoModalProps {
 
 export function VideoModal({ project, onClose }: VideoModalProps) {
   const { lang, t } = useI18n();
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    closeButtonRef.current?.focus();
+    dialogRef.current?.focus();
     // The `autoplay` attribute alone is unreliable for non-muted video —
     // call play() explicitly, still close enough to the click that opened
     // the modal to count as a user gesture. Ignore rejection: the native
@@ -42,20 +41,17 @@ export function VideoModal({ project, onClose }: VideoModalProps) {
       }}
     >
       <div
+        ref={dialogRef}
         className="video-modal"
         role="dialog"
         aria-modal="true"
         aria-labelledby="video-modal-title"
+        aria-describedby="video-modal-hint"
+        tabIndex={-1}
       >
-        <button
-          ref={closeButtonRef}
-          type="button"
-          onClick={onClose}
-          className="video-modal-close"
-          aria-label={t.closeLabel}
-        >
-          <CloseIcon size={18} />
-        </button>
+        <span id="video-modal-hint" className="sr-only">
+          {t.modalCloseHint}
+        </span>
 
         <video
           ref={videoRef}
