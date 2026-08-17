@@ -84,4 +84,39 @@ export const projects: Project[] = [
       { label: "Node.js", icon: "nodedotjs" },
     ],
   },
+  {
+    id: "signageflow",
+    hasMedia: false,
+    badgeVariant: "progress",
+    badge: { es: "Proyecto personal", en: "Personal project" },
+    title: { es: "SignageFlow — Gestor de Cartelería Digital", en: "SignageFlow — Digital Signage Manager" },
+    description: {
+      es: "Plataforma multi-tenant de gestión de cartelería digital para pantallas en tienda: emparejamiento de pantallas por código, programaciones por horario y por zona, y control de acceso por organización y local. Una exploración personal en profundidad de una idea que en Kong Consulting solo pude abordar de forma parcial — arquitectura, modelo de datos y código propios, sin conexión con sistemas ni datos de cliente.",
+      en: "Multi-tenant digital signage management platform for in-store screens: code-based device pairing, schedule- and zone-based content, and organization/location-scoped access control. A deeper personal exploration of an idea I could only partially address at Kong Consulting — own architecture, data model, and code, with no connection to any client system or data.",
+    },
+    tags: [
+      { label: "Angular", icon: "angular" },
+      { label: "Node.js", icon: "nodedotjs" },
+      { label: "TypeScript", icon: "typescript" },
+      { label: "SQL Server" },
+      { label: { es: "Multi-tenant", en: "Multi-tenant" } },
+    ],
+  },
+  {
+    id: "trabajo-por-metros",
+    hasMedia: false,
+    badgeVariant: "live",
+    badge: { es: "Freelance, en producción", en: "Freelance, live" },
+    title: { es: "App de Cobros por Metros (Freelance)", en: "Meter-Based Billing App (Freelance)" },
+    description: {
+      es: "PWA de gestión de cobros construida como encargo freelance para un autónomo de la construcción en Florida (EE. UU.): da de alta trabajos, registra metros por tipo con precio histórico, calcula totales y concilia lo cobrado frente a lo esperado. Instalable desde el móvil, en uso real por el cliente.",
+      en: "Billing management PWA built as freelance work for a self-employed contractor in Florida, US: logs jobs, tracks meters by type with historical pricing, calculates totals, and reconciles what's billed against what's collected. Installable from mobile, in real use by the client.",
+    },
+    tags: [
+      { label: "React", icon: "react" },
+      { label: "TypeScript", icon: "typescript" },
+      { label: "Supabase", icon: "supabase" },
+      { label: "PWA" },
+    ],
+  },
 ];

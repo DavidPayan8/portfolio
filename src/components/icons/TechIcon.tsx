@@ -1,4 +1,15 @@
-import { siAngular, siDart, siDotnet, siFlutter, siLaravel, siNodedotjs, siRedsys } from "simple-icons";
+import {
+  siAngular,
+  siDart,
+  siDotnet,
+  siFlutter,
+  siLaravel,
+  siNodedotjs,
+  siReact,
+  siRedsys,
+  siSupabase,
+  siTypescript,
+} from "simple-icons";
 
 const ICONS = {
   angular: siAngular,
@@ -8,6 +19,9 @@ const ICONS = {
   dart: siDart,
   dotnet: siDotnet,
   redsys: siRedsys,
+  react: siReact,
+  supabase: siSupabase,
+  typescript: siTypescript,
 } as const;
 
 /** simple-icons ships every mark on a 0 0 24 24 canvas, but a few glyphs (e.g. .NET's
