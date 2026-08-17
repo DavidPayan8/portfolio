@@ -1,14 +1,15 @@
 import type { Tag } from "./tags";
 
 export const skills: Tag[] = [
-  { label: "Angular" },
-  { label: "Node.js" },
-  { label: "Laravel" },
-  { label: "Flutter / Dart" },
+  { label: "Angular", icon: "angular" },
+  { label: "Node.js", icon: "nodedotjs" },
+  { label: "Laravel", icon: "laravel" },
+  { label: "Flutter / Dart", icon: ["flutter", "dart"] },
   { label: "SQL Server" },
   {
     label: "VB6 → .NET",
     tooltip: { es: "VB6 fue el precursor de .NET", en: "VB6 was the predecessor of .NET" },
+    icon: "dotnet",
   },
   { label: "Azure DevOps / CI-CD" },
   { label: "REST APIs" },

@@ -6,7 +6,7 @@ const NAV_LINK_CLASS =
 
 export function Nav() {
   const { t, lang } = useI18n();
-  const resumeFile = lang === "es" ? "CV_David_Payan_ES.docx" : "CV_David_Payan_EN.docx";
+  const resumeFile = lang === "es" ? "CV_David_Payan_ES.pdf" : "CV_David_Payan_EN.pdf";
 
   return (
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-outline-variant/30 z-50 transition-all duration-300 ease-in-out">

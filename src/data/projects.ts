@@ -30,9 +30,10 @@ export const projects: Project[] = [
       en: "A full ordering platform for quick-service restaurants: the customer-facing kiosk, a remote device management panel, a WPF POS and kitchen display app, a queue & calling system, and a digital signage manager — standalone or fully wired into the client's ERP. Live across 2 locations with 3 kiosks each, alongside the queue & calling system.",
     },
     tags: [
-      { label: "Angular" },
-      { label: "Node.js" },
-      { label: "WPF / .NET" },
+      { label: "Angular", icon: "angular" },
+      { label: "Node.js", icon: "nodedotjs" },
+      { label: "Laravel", icon: "laravel" },
+      { label: "WPF / .NET", icon: "dotnet" },
       { label: "SQL Server" },
       { label: { es: "Integración ERP", en: "ERP integration" } },
     ],
@@ -48,8 +49,8 @@ export const projects: Project[] = [
       en: "Geolocation-based clock-in app rebuilt as a native cross-platform Flutter app — my own independent port of the original system, shipped for iOS and Android. Between the Flutter app and the PWA version, in use by 18 companies (avg. 20-50 employees each), most integrated with the client's ERP and some with their own independent management panel.",
     },
     tags: [
-      { label: "Flutter" },
-      { label: "Dart" },
+      { label: "Flutter", icon: "flutter" },
+      { label: "Dart", icon: "dart" },
       { label: { es: "Geolocalización", en: "Geolocation" } },
     ],
   },
@@ -78,9 +79,9 @@ export const projects: Project[] = [
       en: "Adding secure card-payment checkout to the kiosk ecosystem via the Redsys payment gateway.",
     },
     tags: [
-      { label: "Redsys" },
+      { label: "Redsys", icon: "redsys" },
       { label: { es: "Pagos", en: "Payments" } },
-      { label: "Node.js" },
+      { label: "Node.js", icon: "nodedotjs" },
     ],
   },
 ];

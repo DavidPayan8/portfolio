@@ -8,4 +8,6 @@ import type { LocalizedText } from "../i18n/types";
 export interface Tag {
   label: LocalizedText | string;
   tooltip?: LocalizedText;
+  /** simple-icons slug(s) (see TechIcon) — omit when the tag is a concept, not a specific technology. */
+  icon?: string | string[];
 }
