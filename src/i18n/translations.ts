@@ -11,6 +11,7 @@ export interface UiText {
   navContact: string;
   navResume: string;
   badgeAvailable: string;
+  heroRole: string;
   heroHeadline: string;
   heroIntro: string;
   ctaWork: string;
@@ -44,10 +45,11 @@ export const translations: Record<Lang, UiText> = {
     navContact: "Contacto",
     navResume: "CV",
     badgeAvailable: "Disponible para nuevas oportunidades",
+    heroRole: "Desarrollador Full Stack",
     heroHeadline:
       "Sistemas full stack, construidos de principio a fin — desde la pantalla del kiosco hasta el ERP que lo conecta todo.",
     heroIntro:
-      "Soy David Payán, Desarrollador Full Stack en Sevilla, España. Construyo plataformas web, apps móviles multiplataforma y los sistemas conectados a ERP que los mantienen unidos — el tipo de software que tiene que funcionar de forma fiable en un restaurante real, en una obra real, todos los días.",
+      "Desarrollador Full Stack con más de 2 años de experiencia sacando proyectos adelante hasta producción, desde el análisis de requisitos hasta el despliegue y el mantenimiento. Construyo plataformas web, apps móviles multiplataforma y los sistemas conectados a ERP que los mantienen unidos — el tipo de software que tiene que funcionar de forma fiable en un restaurante real, en una obra real, todos los días.",
     ctaWork: "Ver el trabajo",
     ctaContact: "Contactar",
     workHeading: "Trabajos seleccionados",
@@ -57,7 +59,7 @@ export const translations: Record<Lang, UiText> = {
     modalCloseHint: "Pulsa Escape o haz clic fuera del vídeo para cerrar",
     aboutHeading: "Sobre mí",
     aboutParagraph:
-      "Ingeniero Full Stack en Kong Consulting, en Sevilla, con más de 2 años construyendo aplicaciones web escalables con Angular, Node.js y Laravel, apps móviles multiplataforma con Flutter, y sistemas conectados a ERP. Los sistemas que he construido están hoy en producción: un ecosistema de kioscos de autoservicio en 2 restaurantes y una app de fichaje usada a diario por 18 empresas. Me gusta llevar un sistema desde una idea en la pizarra hasta algo que funciona de forma fiable y sin supervisión en producción. También he trabajado en Londres (verano de 2023), reforzando mi inglés y mi experiencia trabajando en equipos internacionales.",
+      "Desarrollador Full Stack en Kong Consulting, en Sevilla, con más de 2 años construyendo aplicaciones web escalables con Angular, Node.js y Laravel, apps móviles multiplataforma con Flutter, y sistemas conectados a ERP. Los sistemas que he construido están hoy en producción: un ecosistema de kioscos de autoservicio en 2 restaurantes y una app de fichaje usada a diario por 18 empresas. Me gusta llevar un sistema desde una idea en la pizarra hasta algo que funciona de forma fiable y sin supervisión en producción. También he trabajado en Londres (verano de 2023), reforzando mi inglés y mi experiencia trabajando en equipos internacionales.",
     educationHeading: "Formación",
     contactHeading: "Contacto",
     contactParagraph:
@@ -79,9 +81,10 @@ export const translations: Record<Lang, UiText> = {
     navContact: "Contact",
     navResume: "Resume",
     badgeAvailable: "Available for new opportunities",
+    heroRole: "Full Stack Developer",
     heroHeadline: "Full stack systems, built end to end — from the kiosk screen to the ERP that ties it all together.",
     heroIntro:
-      "I'm David Payán, a Full Stack Developer in Seville, Spain. I build web platforms, cross-platform mobile apps, and the ERP-connected systems that tie them together — the kind of software that has to run reliably in a real restaurant, on a real job site, every day.",
+      "Full Stack Developer with 2+ years of experience taking projects all the way to production, from requirements analysis through deployment and maintenance. I build web platforms, cross-platform mobile apps, and the ERP-connected systems that tie them together — the kind of software that has to run reliably in a real restaurant, on a real job site, every day.",
     ctaWork: "See the work",
     ctaContact: "Get in touch",
     workHeading: "Selected work",
@@ -91,7 +94,7 @@ export const translations: Record<Lang, UiText> = {
     modalCloseHint: "Press Escape or click outside the video to close",
     aboutHeading: "About",
     aboutParagraph:
-      "Full Stack Engineer at Kong Consulting in Seville, with 2+ years building scalable web applications with Angular, Node.js, and Laravel, cross-platform mobile apps with Flutter, and ERP-connected systems. The systems I've built are live today: a self-service kiosk ecosystem across 2 restaurants and a time-tracking app used daily by 18 companies. I like taking a system from a whiteboard idea to something that runs reliably, unattended, in production. I've also worked in London (summer 2023), which strengthened my English and my experience working in international teams.",
+      "Full Stack Developer at Kong Consulting in Seville, with 2+ years building scalable web applications with Angular, Node.js, and Laravel, cross-platform mobile apps with Flutter, and ERP-connected systems. The systems I've built are live today: a self-service kiosk ecosystem across 2 restaurants and a time-tracking app used daily by 18 companies. I like taking a system from a whiteboard idea to something that runs reliably, unattended, in production. I've also worked in London (summer 2023), which strengthened my English and my experience working in international teams.",
     educationHeading: "Education",
     contactHeading: "Contact",
     contactParagraph:
