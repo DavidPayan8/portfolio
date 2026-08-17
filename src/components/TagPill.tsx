@@ -14,7 +14,7 @@ export function TagPill({ tag }: { tag: Tag }) {
       title={tooltip}
     >
       {icons.map((slug) => (
-        <TechIcon key={slug} slug={slug} />
+        <TechIcon key={slug} slug={slug} color />
       ))}
       {label}
     </span>
