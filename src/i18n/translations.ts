@@ -43,7 +43,7 @@ export const translations: Record<Lang, UiText> = {
     navResume: "CV",
     badgeAvailable: "Disponible para nuevas oportunidades",
     heroHeadline:
-      "Sistemas full stack, construidos de principio a fin — desde la pantalla del kiosco hasta la base de datos.",
+      "Sistemas full stack, construidos de principio a fin — desde la pantalla del kiosco hasta el ERP que lo conecta todo.",
     heroIntro:
       "Soy David Payán, Desarrollador Full Stack en Sevilla, España. Construyo plataformas web, apps móviles multiplataforma y los sistemas conectados a ERP que los mantienen unidos — el tipo de software que tiene que funcionar de forma fiable en un restaurante real, en una obra real, todos los días.",
     ctaWork: "Ver el trabajo",
@@ -74,7 +74,7 @@ export const translations: Record<Lang, UiText> = {
     navContact: "Contact",
     navResume: "Resume",
     badgeAvailable: "Available for new opportunities",
-    heroHeadline: "Full stack systems, built end to end — from the kiosk screen to the database.",
+    heroHeadline: "Full stack systems, built end to end — from the kiosk screen to the ERP that ties it all together.",
     heroIntro:
       "I'm David Payán, a Full Stack Developer in Seville, Spain. I build web platforms, cross-platform mobile apps, and the ERP-connected systems that tie them together — the kind of software that has to run reliably in a real restaurant, on a real job site, every day.",
     ctaWork: "See the work",
