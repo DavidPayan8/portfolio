@@ -18,28 +18,26 @@ export function ProjectCarousel() {
 
   return (
     <div>
-      <div className="flex items-center justify-center gap-6 mb-6">
+      <div className="flex items-center justify-center gap-4 mb-6">
+        <button
+          type="button"
+          onClick={() => goTo(index - 1, -1)}
+          className="carousel-nav-btn"
+          aria-label={t.carouselPrevLabel}
+        >
+          <ChevronIcon direction="left" />
+        </button>
         <span className="font-code-sm text-code-sm text-on-surface-variant">
           {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </span>
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={() => goTo(index - 1, -1)}
-            className="carousel-nav-btn"
-            aria-label={t.carouselPrevLabel}
-          >
-            <ChevronIcon direction="left" />
-          </button>
-          <button
-            type="button"
-            onClick={() => goTo(index + 1, 1)}
-            className="carousel-nav-btn"
-            aria-label={t.carouselNextLabel}
-          >
-            <ChevronIcon direction="right" />
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => goTo(index + 1, 1)}
+          className="carousel-nav-btn"
+          aria-label={t.carouselNextLabel}
+        >
+          <ChevronIcon direction="right" />
+        </button>
       </div>
 
       <div

@@ -61,7 +61,7 @@ export const translations: Record<Lang, UiText> = {
     modalCloseHint: "Pulsa Escape o haz clic fuera del vídeo para cerrar",
     aboutHeading: "Sobre mí",
     aboutParagraph:
-      "Soy desarrollador Full Stack, con más de dos años desarrollando sistemas desde los requisitos hasta producción. Me gusta especialmente entender bien un problema, pensar cómo encajan todas sus piezas y encontrar una solución que no solo funcione, sino que facilite realmente el trabajo de quien la utiliza. Si algo no lo sé, intento entenderlo: planteo una hipótesis, la investigo y aprendo por el camino.",
+      "Más de dos años desarrollando sistemas desde los requisitos hasta producción. Me gusta especialmente entender bien un problema, pensar cómo encajan todas sus piezas y encontrar una solución que no solo funcione, sino que facilite realmente el trabajo de quien la utiliza. Si algo no lo sé, intento entenderlo: planteo una hipótesis, la investigo y aprendo por el camino.",
     aboutParagraphSecondary:
       "Fuera del código soy entrenador de un equipo juvenil, donde disfruto enseñando y buscando la forma de que otra persona consiga aplicar lo que le explico. También tengo cierta tendencia a investigar cómo funcionan las cosas cuando algo me parece especialmente complejo o eficiente. En 2023 viví un verano en Londres sin apenas saber inglés, una experiencia que me enseñó, sobre todo, a adaptarme, equivocarme y seguir aprendiendo.",
     educationHeading: "Formación",
@@ -99,7 +99,7 @@ export const translations: Record<Lang, UiText> = {
     modalCloseHint: "Press Escape or click outside the video to close",
     aboutHeading: "About",
     aboutParagraph:
-      "I'm a Full Stack Developer, with more than two years building systems from requirements through to production. I especially like getting a problem right — understanding how all its pieces fit together and finding a solution that doesn't just work, but genuinely makes life easier for whoever uses it. When I don't know something, I try to understand it: I form a hypothesis, investigate it, and learn along the way.",
+      "More than two years building systems from requirements through to production. I especially like getting a problem right — understanding how all its pieces fit together and finding a solution that doesn't just work, but genuinely makes life easier for whoever uses it. When I don't know something, I try to understand it: I form a hypothesis, investigate it, and learn along the way.",
     aboutParagraphSecondary:
       "Outside of code I coach a youth team, where I enjoy teaching and figuring out how to help someone actually apply what I explain. I also have a bit of a habit of digging into how things work when something strikes me as especially complex or efficient. In 2023 I spent a summer in London barely speaking English — an experience that taught me, above all, to adapt, make mistakes, and keep learning.",
     educationHeading: "Education",
