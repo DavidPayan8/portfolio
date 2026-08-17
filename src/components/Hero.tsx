@@ -6,7 +6,7 @@ export function Hero() {
 
   return (
     <header className="mb-24 hero-reveal">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-start">
         <div className="md:col-span-7 order-2 md:order-1">
           <h1 className="font-headline-xl text-headline-xl text-on-surface mb-6 leading-tight">
             {t.heroHeadline}
@@ -39,7 +39,7 @@ export function Hero() {
             alt="David Payán"
             width={200}
             height={200}
-            className="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover border border-outline-variant/40"
+            className="w-48 h-48 sm:w-60 sm:h-60 rounded-full object-cover border border-outline-variant/40"
           />
           <div className="mt-4">
             <div className="font-label-caps text-label-caps tracking-widest text-on-surface uppercase">

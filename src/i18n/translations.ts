@@ -59,7 +59,7 @@ export const translations: Record<Lang, UiText> = {
     modalCloseHint: "Pulsa Escape o haz clic fuera del vídeo para cerrar",
     aboutHeading: "Sobre mí",
     aboutParagraph:
-      "Desarrollador Full Stack en Kong Consulting, en Sevilla, con más de 2 años construyendo aplicaciones web escalables con Angular, Node.js y Laravel, apps móviles multiplataforma con Flutter, y sistemas conectados a ERP. Los sistemas que he construido están hoy en producción: un ecosistema de kioscos de autoservicio en 2 restaurantes y una app de fichaje usada a diario por 18 empresas. Me gusta llevar un sistema desde una idea en la pizarra hasta algo que funciona de forma fiable y sin supervisión en producción. También he trabajado en Londres (verano de 2023), reforzando mi inglés y mi experiencia trabajando en equipos internacionales.",
+      "Desarrollador Full Stack en Kong Consulting, en Sevilla, con más de 2 años construyendo aplicaciones web escalables con Angular, Node.js y Laravel, apps móviles multiplataforma con Flutter, y sistemas conectados a ERP. Los sistemas que he construido están hoy en producción: un ecosistema de kioscos de autoservicio en 2 restaurantes y una app de fichaje usada a diario por 18 empresas. Me gusta llevar un sistema desde una idea en la pizarra hasta algo que funciona de forma fiable y sin supervisión en producción. También he trabajado en Londres (verano de 2023), reforzando mi inglés y mi experiencia trabajando en equipos internacionales. Fuera del código, entreno a un equipo de fútbol infantil, le doy vueltas a la filosofía como aficionado, y de vez en cuando me pica la curiosidad por cómo funcionan cosas cotidianas — cómo traza una ruta Google Maps, cómo triangula tu posición un satélite.",
     educationHeading: "Formación",
     contactHeading: "Contacto",
     contactParagraph:
@@ -94,7 +94,7 @@ export const translations: Record<Lang, UiText> = {
     modalCloseHint: "Press Escape or click outside the video to close",
     aboutHeading: "About",
     aboutParagraph:
-      "Full Stack Developer at Kong Consulting in Seville, with 2+ years building scalable web applications with Angular, Node.js, and Laravel, cross-platform mobile apps with Flutter, and ERP-connected systems. The systems I've built are live today: a self-service kiosk ecosystem across 2 restaurants and a time-tracking app used daily by 18 companies. I like taking a system from a whiteboard idea to something that runs reliably, unattended, in production. I've also worked in London (summer 2023), which strengthened my English and my experience working in international teams.",
+      "Full Stack Developer at Kong Consulting in Seville, with 2+ years building scalable web applications with Angular, Node.js, and Laravel, cross-platform mobile apps with Flutter, and ERP-connected systems. The systems I've built are live today: a self-service kiosk ecosystem across 2 restaurants and a time-tracking app used daily by 18 companies. I like taking a system from a whiteboard idea to something that runs reliably, unattended, in production. I've also worked in London (summer 2023), which strengthened my English and my experience working in international teams. Outside of code, I coach a kids' football team, dabble in philosophy as a hobby, and every so often get curious about how everyday things actually work — how Google Maps plots a route, how a satellite triangulates your position.",
     educationHeading: "Education",
     contactHeading: "Contact",
     contactParagraph:
