@@ -10,7 +10,7 @@ export function Nav() {
 
   return (
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-outline-variant/30 z-50 transition-all duration-300 ease-in-out">
-      <div className="flex justify-between items-center px-gutter py-base max-w-container-max lg:max-w-[70%] mx-auto h-16">
+      <div className="flex justify-between items-center px-gutter py-base lg:max-w-[70%] mx-auto h-16">
         <a href="#top" className="font-label-caps text-label-caps tracking-widest text-on-surface uppercase">
           David Payán
         </a>

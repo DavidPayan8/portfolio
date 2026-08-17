@@ -10,7 +10,7 @@ export function ContactSection() {
     <section id="contact" className="mt-stack-lg scroll-mt-28" aria-labelledby="contact-heading">
       <Reveal>
         <SectionHeading index="03" title={t.contactHeading} id="contact-heading" />
-        <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mb-6">{t.contactParagraph}</p>
+        <p className="font-body-md text-body-md text-on-surface-variant mb-6">{t.contactParagraph}</p>
         <a
           href="mailto:davidpayanalvarado@gmail.com"
           className="inline-block font-headline-lg text-headline-lg text-on-surface hover:text-secondary-container transition-colors duration-300 mb-8 break-all"

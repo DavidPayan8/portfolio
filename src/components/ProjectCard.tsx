@@ -65,7 +65,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
         )}
         <h3 className="font-headline-lg text-headline-lg text-on-surface mb-2">{project.title[lang]}</h3>
-        <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-4">{project.description[lang]}</p>
+        <p className="font-body-md text-body-md text-on-surface-variant mb-4">{project.description[lang]}</p>
         <div className="flex flex-wrap gap-2" aria-label="Technologies used">
           {project.tags.map((tag) => (
             <TagPill key={typeof tag.label === "string" ? tag.label : tag.label.en} tag={tag} />

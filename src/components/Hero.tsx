@@ -18,19 +18,19 @@ export function Hero() {
         alt="David Payán"
         width={200}
         height={200}
-        className="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover border border-outline-variant/40"
+        className="w-56 h-56 sm:w-64 sm:h-64 rounded-full object-cover"
       />
       <div className="mt-4 font-label-caps text-label-caps tracking-widest text-on-surface-variant uppercase">
         {t.heroRole}
       </div>
 
       <h1 className="font-headline-xl text-headline-xl text-on-surface mt-6 mb-4 leading-tight">David Payán</h1>
-      <p className="font-body-md text-body-md text-secondary-container italic max-w-xl mb-6">
+      <p className="font-body-md text-body-md text-secondary-container italic mb-6">
         &ldquo;{t.heroHeadline}&rdquo;
       </p>
 
-      <p className="font-body-md text-body-md text-on-surface-variant max-w-xl">{t.heroIntro}</p>
-      <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-4">{t.heroIntroSecondary}</p>
+      <p className="font-body-md text-body-md text-on-surface-variant">{t.heroIntro}</p>
+      <p className="font-body-md text-body-md text-on-surface-variant mt-4">{t.heroIntroSecondary}</p>
 
       <div className="flex flex-wrap justify-center gap-4 mt-8">
         <a

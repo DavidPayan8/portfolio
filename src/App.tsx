@@ -24,7 +24,7 @@ function AppShell() {
       <SeoHead />
       <SkipLink />
       <Nav />
-      <main id="top" className="flex-grow pt-32 pb-stack-lg max-w-container-max lg:max-w-[70%] mx-auto px-gutter w-full">
+      <main id="top" className="flex-grow pt-32 pb-stack-lg lg:max-w-[70%] mx-auto px-gutter w-full">
         <Hero />
         <WorkSection />
         <AboutSection />

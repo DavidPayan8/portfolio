@@ -12,8 +12,8 @@ export function AboutSection() {
     <section id="about" className="mt-stack-lg scroll-mt-28" aria-labelledby="about-heading">
       <Reveal>
         <SectionHeading index="02" title={t.aboutHeading} id="about-heading" />
-        <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-4">{t.aboutParagraph}</p>
-        <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-4">{t.aboutParagraphSecondary}</p>
+        <p className="font-body-md text-body-md text-on-surface-variant mb-4">{t.aboutParagraph}</p>
+        <p className="font-body-md text-body-md text-on-surface-variant mb-4">{t.aboutParagraphSecondary}</p>
         <div className="flex flex-wrap gap-2 mt-6" aria-label="Core skills">
           {skills.map((tag) => (
             <TagPill key={typeof tag.label === "string" ? tag.label : tag.label.en} tag={tag} />
