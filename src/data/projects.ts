@@ -40,6 +40,8 @@ export const projects: Project[] = [
   {
     id: "mobile-time-tracking",
     hasMedia: true,
+    badgeVariant: "live",
+    badge: { es: "Sistema en producción", en: "Live system" },
     title: { es: "App de Fichaje Móvil (Flutter)", en: "Mobile Time Tracking (Flutter)" },
     description: {
       es: "App de fichaje por geolocalización reconstruida como app nativa multiplataforma en Flutter — mi propio port independiente del sistema original, publicado para iOS y Android. En uso, entre la versión Flutter y la PWA, por 18 empresas (media de 20-50 trabajadores cada una), la mayoría integradas con el ERP del cliente y algunas con panel de gestión propio e independiente.",

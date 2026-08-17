@@ -15,7 +15,7 @@ export interface UiText {
   heroIntro: string;
   ctaWork: string;
   ctaContact: string;
-  workSrHeading: string;
+  workHeading: string;
   carouselPrevLabel: string;
   carouselNextLabel: string;
   maximizeLabel: string;
@@ -50,14 +50,14 @@ export const translations: Record<Lang, UiText> = {
       "Soy David Payán, Desarrollador Full Stack en Sevilla, España. Construyo plataformas web, apps móviles multiplataforma y los sistemas conectados a ERP que los mantienen unidos — el tipo de software que tiene que funcionar de forma fiable en un restaurante real, en una obra real, todos los días.",
     ctaWork: "Ver el trabajo",
     ctaContact: "Contactar",
-    workSrHeading: "Trabajos seleccionados",
+    workHeading: "Trabajos seleccionados",
     carouselPrevLabel: "Proyecto anterior",
     carouselNextLabel: "Siguiente proyecto",
     maximizeLabel: "Ver a pantalla grande",
     modalCloseHint: "Pulsa Escape o haz clic fuera del vídeo para cerrar",
     aboutHeading: "Sobre mí",
     aboutParagraph:
-      "Ingeniero Full Stack en Kong Consulting, en Sevilla, con más de 2 años construyendo aplicaciones web escalables con Angular, Node.js y Laravel, apps móviles multiplataforma con Flutter, y sistemas conectados a ERP. Me gusta llevar un sistema desde una idea en la pizarra hasta algo que funciona sin supervisión en producción — kioscos en restaurantes, apps en obras, dashboards que no se caen a las 2 de la madrugada. Antes de esto pasé un verano (2023) trabajando en Londres, una experiencia que afinó mi inglés y mi manera de trabajar bajo presión en equipos internacionales.",
+      "Ingeniero Full Stack en Kong Consulting, en Sevilla, con más de 2 años construyendo aplicaciones web escalables con Angular, Node.js y Laravel, apps móviles multiplataforma con Flutter, y sistemas conectados a ERP. Los sistemas que he construido están hoy en producción: un ecosistema de kioscos de autoservicio en 2 restaurantes y una app de fichaje usada a diario por 18 empresas. Me gusta llevar un sistema desde una idea en la pizarra hasta algo que funciona sin supervisión en producción — kioscos en restaurantes, apps en obras, dashboards que no se caen a las 2 de la madrugada. Antes de esto pasé un verano (2023) trabajando en Londres, una experiencia que afinó mi inglés y mi manera de trabajar bajo presión en equipos internacionales.",
     educationHeading: "Formación",
     contactHeading: "Contacto",
     contactParagraph:
@@ -84,14 +84,14 @@ export const translations: Record<Lang, UiText> = {
       "I'm David Payán, a Full Stack Developer in Seville, Spain. I build web platforms, cross-platform mobile apps, and the ERP-connected systems that tie them together — the kind of software that has to run reliably in a real restaurant, on a real job site, every day.",
     ctaWork: "See the work",
     ctaContact: "Get in touch",
-    workSrHeading: "Selected work",
+    workHeading: "Selected work",
     carouselPrevLabel: "Previous project",
     carouselNextLabel: "Next project",
     maximizeLabel: "View fullscreen",
     modalCloseHint: "Press Escape or click outside the video to close",
     aboutHeading: "About",
     aboutParagraph:
-      "Full Stack Engineer at Kong Consulting in Seville, with 2+ years building scalable web applications with Angular, Node.js, and Laravel, cross-platform mobile apps with Flutter, and ERP-connected systems. I like taking a system from a whiteboard idea to something that runs unattended in production — kiosks in restaurants, apps on job sites, dashboards that don't break at 2am. Before that, I spent a summer (2023) working in London, which sharpened my English and how I work under pressure in international teams.",
+      "Full Stack Engineer at Kong Consulting in Seville, with 2+ years building scalable web applications with Angular, Node.js, and Laravel, cross-platform mobile apps with Flutter, and ERP-connected systems. The systems I've built are live today: a self-service kiosk ecosystem across 2 restaurants and a time-tracking app used daily by 18 companies. I like taking a system from a whiteboard idea to something that runs unattended in production — kiosks in restaurants, apps on job sites, dashboards that don't break at 2am. Before that, I spent a summer (2023) working in London, which sharpened my English and how I work under pressure in international teams.",
     educationHeading: "Education",
     contactHeading: "Contact",
     contactParagraph:
