@@ -28,22 +28,7 @@
     to { opacity: 1; clip-path: inset(0 0 0 0); }
 }
 
-/* Project card: cursor-following spotlight + existing hover state */
-.card-media {
-    --spot-x: 50%;
-    --spot-y: 35%;
-}
-.card-media::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(240px circle at var(--spot-x) var(--spot-y), rgba(0, 210, 253, 0.18), transparent 70%);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    pointer-events: none;
-}
-.project-card:hover .card-media::after { opacity: 1; }
-.project-card:hover .project-border { border-color: #00d2fd; }
+/* Project card hover state */
 .project-card:hover .card-media { opacity: 0.35; }
 .project-card:hover .play-badge { transform: scale(1.06); }
 

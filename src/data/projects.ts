@@ -26,8 +26,8 @@ export const projects: Project[] = [
     badge: { es: "Sistema en producción", en: "Live system" },
     title: { es: "Ecosistema de Kioscos de Autoservicio", en: "Self-Service Kiosk Ecosystem" },
     description: {
-      es: "Los restaurantes de comida rápida necesitaban digitalizar el pedido y la gestión en tienda sin depender de terceros. Construí un ecosistema completo — kiosco, TPV, cola de turnos, cartelería — de forma independiente o integrada con su ERP. En producción en 2 locales, 6 kioscos.",
-      en: "Quick-service restaurants needed to digitize ordering and in-store management without relying on third parties. Built a full ecosystem — kiosk, POS, queue system, digital signage — standalone or ERP-integrated. Live across 2 locations, 6 kiosks.",
+      es: "Digitaliza el pedido y la gestión en restaurantes de comida rápida, de forma independiente o integrada con su ERP.",
+      en: "Digitizes ordering and in-store management for quick-service restaurants, standalone or ERP-integrated.",
     },
     tags: [
       { label: "Angular", icon: "angular" },
@@ -46,8 +46,8 @@ export const projects: Project[] = [
     badge: { es: "Freelance, en producción", en: "Freelance, live" },
     title: { es: "App de Cobros por Metros (Freelance)", en: "Meter-Based Billing App (Freelance)" },
     description: {
-      es: "Un autónomo de la construcción en Florida (EE. UU.) llevaba sus cobros por metros a mano, sin control claro de lo cobrado. Le construí una PWA para registrar trabajos, calcular totales y conciliar cobros. En uso real por el cliente.",
-      en: "A self-employed contractor in Florida, US was tracking meter-based billing by hand, with no clear view of what was owed. Built him a PWA to log jobs, calculate totals, and reconcile payments. In real use by the client.",
+      es: "Sustituye el cálculo de cobros a mano de un autónomo de la construcción por una app que registra trabajos y concilia lo cobrado.",
+      en: "Replaces a construction contractor's manual billing calculations with an app that logs jobs and reconciles payments.",
     },
     tags: [
       { label: "React", icon: "react" },
@@ -63,8 +63,8 @@ export const projects: Project[] = [
     badge: { es: "Sistema en producción", en: "Live system" },
     title: { es: "App de Fichaje Móvil (Flutter + PWA)", en: "Mobile Time Tracking (Flutter + PWA)" },
     description: {
-      es: "Las empresas necesitaban fichaje remoto preciso y difícil de falsear. Reconstruí el sistema como app nativa en Flutter y como PWA, con geolocalización. En uso a diario por 18 empresas.",
-      en: "Companies needed accurate, hard-to-game remote clock-in. Rebuilt the system as a native Flutter app and a PWA, with geolocation. Used daily by 18 companies.",
+      es: "Fichaje remoto preciso y difícil de falsear, con geolocalización, como app nativa y como PWA.",
+      en: "Accurate, hard-to-game remote clock-in with geolocation, as a native app and a PWA.",
     },
     tags: [
       { label: "Flutter", icon: "flutter" },
@@ -79,8 +79,8 @@ export const projects: Project[] = [
     badge: { es: "Proyecto personal", en: "Personal project" },
     title: { es: "SignageFlow — Gestor de Cartelería Digital", en: "SignageFlow — Digital Signage Manager" },
     description: {
-      es: "Quería llevar la idea de cartelería digital más allá de lo que había explorado en el trabajo. Construí, por mi cuenta, una plataforma multi-tenant con emparejamiento de pantallas por código y un reproductor de escritorio en Electron.",
-      en: "Wanted to take the digital signage idea further than I'd been able to explore at work. Built, on my own, a multi-tenant platform with code-based screen pairing and an Electron desktop player.",
+      es: "Gestor de cartelería digital multi-tenant para pantallas en tienda, con reproductor de escritorio en Electron.",
+      en: "Multi-tenant digital signage manager for in-store screens, with an Electron desktop player.",
     },
     tags: [
       { label: "Angular", icon: "angular" },
@@ -96,8 +96,8 @@ export const projects: Project[] = [
     hasMedia: true,
     title: { es: "App de Gestión de Órdenes de Trabajo", en: "Work Order & Construction App" },
     description: {
-      es: "Los equipos en obra necesitaban gestionar órdenes de trabajo sin volver a la oficina para actualizar el ERP. Construí una app móvil sincronizada en tiempo real con el sistema de la empresa.",
-      en: "Crews on site needed to manage work orders without a trip back to the office to update the ERP. Built a mobile app that syncs with the company system in real time.",
+      es: "Gestión de órdenes de trabajo en obra, sincronizada en tiempo real con el ERP de la empresa.",
+      en: "On-site work order management, synced in real time with the company ERP.",
     },
     tags: [
       { label: { es: "Móvil", en: "Mobile" } },

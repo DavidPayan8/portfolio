@@ -1,6 +1,5 @@
 import { AboutSection } from "./components/AboutSection";
 import { ContactSection } from "./components/ContactSection";
-import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { Nav } from "./components/Nav";
 import { SeoHead } from "./components/SeoHead";
@@ -25,13 +24,12 @@ function AppShell() {
       <SeoHead />
       <SkipLink />
       <Nav />
-      <main id="top" className="flex-grow pt-32 pb-stack-lg max-w-container-max mx-auto px-gutter w-full">
+      <main id="top" className="flex-grow pt-32 pb-stack-lg max-w-container-max lg:max-w-[70%] mx-auto px-gutter w-full">
         <Hero />
         <WorkSection />
         <AboutSection />
         <ContactSection />
       </main>
-      <Footer />
     </>
   );
 }

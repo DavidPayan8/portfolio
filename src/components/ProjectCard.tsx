@@ -1,4 +1,4 @@
-import { useRef, useState, type MouseEvent } from "react";
+import { useState } from "react";
 import type { Project } from "../data/projects";
 import { useI18n } from "../i18n/I18nContext";
 import { ExpandIcon } from "./icons/ExpandIcon";
@@ -8,25 +8,12 @@ import { VideoModal } from "./VideoModal";
 export function ProjectCard({ project }: { project: Project }) {
   const { lang, t } = useI18n();
   const isProgress = project.badgeVariant === "progress";
-  const mediaRef = useRef<HTMLDivElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  function handleMouseMove(event: MouseEvent<HTMLDivElement>) {
-    const el = mediaRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width) * 100;
-    const y = ((event.clientY - rect.top) / rect.height) * 100;
-    el.style.setProperty("--spot-x", `${x}%`);
-    el.style.setProperty("--spot-y", `${y}%`);
-  }
 
   return (
     <article className="project-card relative rounded overflow-hidden bg-surface flex flex-col justify-end w-full min-h-[440px]">
-      <div className="project-border absolute inset-0 border border-outline-variant/30 rounded z-20 pointer-events-none transition-colors duration-500" />
+      <div className="project-border absolute inset-0 border border-outline-variant/30 rounded z-20 pointer-events-none" />
       <div
-        ref={mediaRef}
-        onMouseMove={handleMouseMove}
         className={`card-media absolute inset-0 z-0 transition-opacity duration-700 flex items-start justify-center pt-20 ${
           project.videoSrc ? "" : "media-placeholder opacity-70"
         }`}
@@ -63,7 +50,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </button>
         )}
       </div>
-      <div className="relative z-10 p-8 md:p-10 bg-gradient-to-t from-background/95 via-background/50 to-transparent pointer-events-none">
+      <div className="relative z-10 p-8 md:p-10 bg-gradient-to-t from-background/95 via-background/85 to-background/60 pointer-events-none">
         {project.badge && (
           <div className="flex items-center gap-3 mb-4">
             <span

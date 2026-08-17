@@ -28,7 +28,6 @@ export interface UiText {
   educationHeading: string;
   contactHeading: string;
   contactParagraph: string;
-  footerCopyright: string;
   socialEmail: string;
   langToggleLabel: string;
 }
@@ -50,7 +49,7 @@ export const translations: Record<Lang, UiText> = {
     heroRole: "Desarrollador Full Stack",
     heroHeadline: "Me gusta entender cómo encajan las piezas.",
     heroIntro:
-      "Soy desarrollador Full Stack. Parto de los requisitos, pienso la solución, construyo el sistema y me encargo de que termine funcionando en producción.",
+      "Parto de los requisitos, pienso la solución, construyo el sistema y me encargo de que termine funcionando en producción.",
     heroIntroSecondary:
       "He trabajado con plataformas web, aplicaciones móviles, kioscos de autoservicio e integraciones con ERP. En este portfolio puedes ver algunos de esos proyectos y cómo están construidos.",
     ctaWork: "Ver el trabajo",
@@ -62,14 +61,13 @@ export const translations: Record<Lang, UiText> = {
     modalCloseHint: "Pulsa Escape o haz clic fuera del vídeo para cerrar",
     aboutHeading: "Sobre mí",
     aboutParagraph:
-      "Soy desarrollador Full Stack en Kong Consulting (Sevilla), con más de dos años desarrollando sistemas desde los requisitos hasta producción. Me gusta especialmente entender bien un problema, pensar cómo encajan todas sus piezas y encontrar una solución que no solo funcione, sino que facilite realmente el trabajo de quien la utiliza. Si algo no lo sé, intento entenderlo: planteo una hipótesis, la investigo y aprendo por el camino.",
+      "Soy desarrollador Full Stack, con más de dos años desarrollando sistemas desde los requisitos hasta producción. Me gusta especialmente entender bien un problema, pensar cómo encajan todas sus piezas y encontrar una solución que no solo funcione, sino que facilite realmente el trabajo de quien la utiliza. Si algo no lo sé, intento entenderlo: planteo una hipótesis, la investigo y aprendo por el camino.",
     aboutParagraphSecondary:
       "Fuera del código soy entrenador de un equipo juvenil, donde disfruto enseñando y buscando la forma de que otra persona consiga aplicar lo que le explico. También tengo cierta tendencia a investigar cómo funcionan las cosas cuando algo me parece especialmente complejo o eficiente. En 2023 viví un verano en Londres sin apenas saber inglés, una experiencia que me enseñó, sobre todo, a adaptarme, equivocarme y seguir aprendiendo.",
     educationHeading: "Formación",
     contactHeading: "Contacto",
     contactParagraph:
       "¿Tienes un proyecto entre manos o quieres hablar sobre una oportunidad? Escríbeme directamente o encuéntrame en estas redes.",
-    footerCopyright: "© 2026 David Payán. Sevilla, España.",
     socialEmail: "Correo electrónico",
     langToggleLabel: "Switch to English",
   },
@@ -89,7 +87,7 @@ export const translations: Record<Lang, UiText> = {
     heroRole: "Full Stack Developer",
     heroHeadline: "I like understanding how the pieces fit together.",
     heroIntro:
-      "I'm a Full Stack Developer. I start from the requirements, think through the solution, build the system, and make sure it ends up running in production.",
+      "I start from the requirements, think through the solution, build the system, and make sure it ends up running in production.",
     heroIntroSecondary:
       "I've worked with web platforms, mobile apps, self-service kiosks, and ERP integrations. You can see some of those projects in this portfolio, and how they're built.",
     ctaWork: "See the work",
@@ -101,14 +99,13 @@ export const translations: Record<Lang, UiText> = {
     modalCloseHint: "Press Escape or click outside the video to close",
     aboutHeading: "About",
     aboutParagraph:
-      "I'm a Full Stack Developer at Kong Consulting (Seville), with more than two years building systems from requirements through to production. I especially like getting a problem right — understanding how all its pieces fit together and finding a solution that doesn't just work, but genuinely makes life easier for whoever uses it. When I don't know something, I try to understand it: I form a hypothesis, investigate it, and learn along the way.",
+      "I'm a Full Stack Developer, with more than two years building systems from requirements through to production. I especially like getting a problem right — understanding how all its pieces fit together and finding a solution that doesn't just work, but genuinely makes life easier for whoever uses it. When I don't know something, I try to understand it: I form a hypothesis, investigate it, and learn along the way.",
     aboutParagraphSecondary:
       "Outside of code I coach a youth team, where I enjoy teaching and figuring out how to help someone actually apply what I explain. I also have a bit of a habit of digging into how things work when something strikes me as especially complex or efficient. In 2023 I spent a summer in London barely speaking English — an experience that taught me, above all, to adapt, make mistakes, and keep learning.",
     educationHeading: "Education",
     contactHeading: "Contact",
     contactParagraph:
       "Got a project in mind or want to talk about an opportunity? Reach out directly or find me on these.",
-    footerCopyright: "© 2026 David Payán. Seville, Spain.",
     socialEmail: "Email",
     langToggleLabel: "Cambiar a español",
   },

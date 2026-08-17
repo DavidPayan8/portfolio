@@ -21,7 +21,7 @@ export function SocialLinks({ className = "flex gap-6" }: SocialLinksProps) {
         <MailIcon />
       </a>
       <a
-        className="text-on-surface-variant hover:text-on-surface transition-colors duration-200"
+        className="text-on-surface-variant hover:text-[#2E8BDB] transition-colors duration-200"
         href="https://www.linkedin.com/in/david-pay%C3%A1n-alvarado-39a488252/"
         target="_blank"
         rel="noopener noreferrer"
