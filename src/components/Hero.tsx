@@ -43,7 +43,7 @@ export function Hero() {
               className="w-full aspect-[912/670] object-cover brightness-95"
             />
             <div
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,theme(colors.background)_92%)]"
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_75%,theme(colors.background)_135%)]"
               aria-hidden="true"
             />
           </div>
