@@ -40,6 +40,23 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "trabajo-por-metros",
+    hasMedia: false,
+    badgeVariant: "live",
+    badge: { es: "Freelance, en producción", en: "Freelance, live" },
+    title: { es: "App de Cobros por Metros (Freelance)", en: "Meter-Based Billing App (Freelance)" },
+    description: {
+      es: "PWA de gestión de cobros construida como encargo freelance para un autónomo de la construcción en Florida (EE. UU.): da de alta trabajos, registra metros por tipo con precio histórico, calcula totales y concilia lo cobrado frente a lo esperado. Instalable desde el móvil, en uso real por el cliente.",
+      en: "Billing management PWA built as freelance work for a self-employed contractor in Florida, US: logs jobs, tracks meters by type with historical pricing, calculates totals, and reconciles what's billed against what's collected. Installable from mobile, in real use by the client.",
+    },
+    tags: [
+      { label: "React", icon: "react" },
+      { label: "TypeScript", icon: "typescript" },
+      { label: "Supabase", icon: "supabase" },
+      { label: "PWA" },
+    ],
+  },
+  {
     id: "mobile-time-tracking",
     hasMedia: true,
     badgeVariant: "live",
@@ -53,20 +70,6 @@ export const projects: Project[] = [
       { label: "Flutter", icon: "flutter" },
       { label: "Dart", icon: "dart" },
       { label: { es: "Geolocalización", en: "Geolocation" } },
-    ],
-  },
-  {
-    id: "work-order-app",
-    hasMedia: true,
-    title: { es: "App de Gestión de Órdenes de Trabajo", en: "Work Order & Construction App" },
-    description: {
-      es: "App móvil para gestionar órdenes de trabajo de construcción, sincronizada con el ERP de la empresa para actualización de tareas, sincronización de datos y reporting.",
-      en: "Mobile app for managing construction work orders, synced with the company ERP for task updates, data sync, and reporting.",
-    },
-    tags: [
-      { label: { es: "Móvil", en: "Mobile" } },
-      { label: { es: "Integración ERP", en: "ERP integration" } },
-      { label: "REST APIs" },
     ],
   },
   {
@@ -88,20 +91,17 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "trabajo-por-metros",
-    hasMedia: false,
-    badgeVariant: "live",
-    badge: { es: "Freelance, en producción", en: "Freelance, live" },
-    title: { es: "App de Cobros por Metros (Freelance)", en: "Meter-Based Billing App (Freelance)" },
+    id: "work-order-app",
+    hasMedia: true,
+    title: { es: "App de Gestión de Órdenes de Trabajo", en: "Work Order & Construction App" },
     description: {
-      es: "PWA de gestión de cobros construida como encargo freelance para un autónomo de la construcción en Florida (EE. UU.): da de alta trabajos, registra metros por tipo con precio histórico, calcula totales y concilia lo cobrado frente a lo esperado. Instalable desde el móvil, en uso real por el cliente.",
-      en: "Billing management PWA built as freelance work for a self-employed contractor in Florida, US: logs jobs, tracks meters by type with historical pricing, calculates totals, and reconciles what's billed against what's collected. Installable from mobile, in real use by the client.",
+      es: "App móvil para gestionar órdenes de trabajo de construcción, sincronizada con el ERP de la empresa para actualización de tareas, sincronización de datos y reporting.",
+      en: "Mobile app for managing construction work orders, synced with the company ERP for task updates, data sync, and reporting.",
     },
     tags: [
-      { label: "React", icon: "react" },
-      { label: "TypeScript", icon: "typescript" },
-      { label: "Supabase", icon: "supabase" },
-      { label: "PWA" },
+      { label: { es: "Móvil", en: "Mobile" } },
+      { label: { es: "Integración ERP", en: "ERP integration" } },
+      { label: "REST APIs" },
     ],
   },
 ];
