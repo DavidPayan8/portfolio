@@ -8,7 +8,7 @@ export function WorkSection() {
 
   return (
     <section id="work" className="scroll-mt-28" aria-labelledby="work-heading">
-      <Reveal>
+      <Reveal className="text-center">
         <SectionHeading index="01" title={t.workHeading} id="work-heading" />
         <ProjectCarousel />
       </Reveal>

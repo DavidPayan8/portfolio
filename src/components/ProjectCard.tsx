@@ -52,7 +52,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
       <div className="relative z-10 p-8 md:p-10 bg-gradient-to-t from-background/95 via-background/85 to-background/60 pointer-events-none">
         {project.badge && (
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center justify-center gap-3 mb-4">
             <span
               className={`w-2 h-2 rounded-full ${isProgress ? "bg-outline-variant" : "bg-secondary-container animate-pulse"}`}
               aria-hidden="true"
@@ -66,7 +66,7 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
         <h3 className="font-headline-lg text-headline-lg text-on-surface mb-2">{project.title[lang]}</h3>
         <p className="font-body-md text-body-md text-on-surface-variant mb-4">{project.description[lang]}</p>
-        <div className="flex flex-wrap gap-2" aria-label="Technologies used">
+        <div className="flex flex-wrap justify-center gap-2" aria-label="Technologies used">
           {project.tags.map((tag) => (
             <TagPill key={typeof tag.label === "string" ? tag.label : tag.label.en} tag={tag} />
           ))}

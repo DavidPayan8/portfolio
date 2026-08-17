@@ -8,7 +8,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="mt-stack-lg scroll-mt-28" aria-labelledby="contact-heading">
-      <Reveal>
+      <Reveal className="text-center">
         <SectionHeading index="03" title={t.contactHeading} id="contact-heading" />
         <p className="font-body-md text-body-md text-on-surface-variant mb-6">{t.contactParagraph}</p>
         <a
@@ -17,7 +17,7 @@ export function ContactSection() {
         >
           davidpayanalvarado@gmail.com
         </a>
-        <SocialLinks />
+        <SocialLinks className="flex justify-center gap-6" />
       </Reveal>
     </section>
   );

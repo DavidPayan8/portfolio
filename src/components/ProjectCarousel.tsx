@@ -18,7 +18,7 @@ export function ProjectCarousel() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-center gap-6 mb-6">
         <span className="font-code-sm text-code-sm text-on-surface-variant">
           {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </span>
@@ -49,7 +49,7 @@ export function ProjectCarousel() {
         <ProjectCard project={project} />
       </div>
 
-      <div className="flex items-center gap-2 mt-6" role="tablist" aria-label="Projects">
+      <div className="flex items-center justify-center gap-2 mt-6" role="tablist" aria-label="Projects">
         {projects.map((p, i) => (
           <button
             key={p.id}
