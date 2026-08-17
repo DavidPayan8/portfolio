@@ -23,6 +23,8 @@ export interface UiText {
   aboutHeading: string;
   aboutParagraph: string;
   educationHeading: string;
+  contactHeading: string;
+  contactParagraph: string;
   footerCopyright: string;
   socialEmail: string;
   langToggleLabel: string;
@@ -57,6 +59,9 @@ export const translations: Record<Lang, UiText> = {
     aboutParagraph:
       "Ingeniero Full Stack en Kong Consulting, en Sevilla, con más de 2 años construyendo aplicaciones web escalables con Angular, Node.js y Laravel, apps móviles multiplataforma con Flutter, y sistemas conectados a ERP. Me gusta llevar un sistema desde una idea en la pizarra hasta algo que funciona sin supervisión en producción — kioscos en restaurantes, apps en obras, dashboards que no se caen a las 2 de la madrugada. Antes de esto pasé un verano (2023) trabajando en Londres, una experiencia que afinó mi inglés y mi manera de trabajar bajo presión en equipos internacionales.",
     educationHeading: "Formación",
+    contactHeading: "Contacto",
+    contactParagraph:
+      "¿Tienes un proyecto entre manos o quieres hablar sobre una oportunidad? Escríbeme directamente o encuéntrame en estas redes.",
     footerCopyright: "© 2026 David Payán. Sevilla, España.",
     socialEmail: "Correo electrónico",
     langToggleLabel: "Switch to English",
@@ -88,6 +93,9 @@ export const translations: Record<Lang, UiText> = {
     aboutParagraph:
       "Full Stack Engineer at Kong Consulting in Seville, with 2+ years building scalable web applications with Angular, Node.js, and Laravel, cross-platform mobile apps with Flutter, and ERP-connected systems. I like taking a system from a whiteboard idea to something that runs unattended in production — kiosks in restaurants, apps on job sites, dashboards that don't break at 2am. Before that, I spent a summer (2023) working in London, which sharpened my English and how I work under pressure in international teams.",
     educationHeading: "Education",
+    contactHeading: "Contact",
+    contactParagraph:
+      "Got a project in mind or want to talk about an opportunity? Reach out directly or find me on these.",
     footerCopyright: "© 2026 David Payán. Seville, Spain.",
     socialEmail: "Email",
     langToggleLabel: "Cambiar a español",

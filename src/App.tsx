@@ -1,4 +1,5 @@
 import { AboutSection } from "./components/AboutSection";
+import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { Nav } from "./components/Nav";
@@ -28,6 +29,7 @@ function AppShell() {
         <Hero />
         <WorkSection />
         <AboutSection />
+        <ContactSection />
       </main>
       <Footer />
     </>

@@ -25,12 +25,12 @@ export function Nav() {
             {t.navContact}
           </a>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <LanguageToggle />
           <a
             href={`/${resumeFile}`}
             download={resumeFile}
-            className="bg-surface-container-high text-on-surface border border-outline-variant/50 hover:bg-surface-bright hover:border-outline px-6 py-2 rounded font-label-caps text-label-caps transition-all duration-300 uppercase"
+            className="bg-on-surface text-background hover:opacity-90 px-4 sm:px-6 py-2 rounded font-label-caps text-label-caps transition-opacity duration-300 uppercase whitespace-nowrap"
           >
             {t.navResume}
           </a>

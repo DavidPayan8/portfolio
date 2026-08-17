@@ -8,7 +8,7 @@ export function AboutSection() {
   const { t, lang } = useI18n();
 
   return (
-    <section id="about" className="mt-stack-lg" aria-labelledby="about-heading">
+    <section id="about" className="mt-stack-lg scroll-mt-28" aria-labelledby="about-heading">
       <Reveal className="grid grid-cols-1 md:grid-cols-12 gap-6">
         <div className="md:col-span-4">
           <h2 id="about-heading" className="font-headline-lg text-headline-lg text-on-surface mb-4">

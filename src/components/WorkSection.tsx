@@ -6,7 +6,7 @@ export function WorkSection() {
   const { t } = useI18n();
 
   return (
-    <section id="work" aria-labelledby="work-heading">
+    <section id="work" className="scroll-mt-28" aria-labelledby="work-heading">
       <h2 id="work-heading" className="sr-only">
         {t.workSrHeading}
       </h2>
