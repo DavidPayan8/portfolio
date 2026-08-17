@@ -12,6 +12,7 @@ export function Hero() {
             {t.heroHeadline}
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant max-w-xl">{t.heroIntro}</p>
+          <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-4">{t.heroIntroSecondary}</p>
           <div className="flex flex-wrap gap-4 mt-8">
             <a
               href="#work"
@@ -27,7 +28,7 @@ export function Hero() {
             </a>
           </div>
         </div>
-        <div className="md:col-span-5 order-1 md:order-2 flex flex-col items-center text-center">
+        <div className="md:col-span-5 order-1 md:order-2 flex flex-col items-center md:items-end text-center md:text-right">
           <div className="flex items-center gap-3 mb-6">
             <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse" aria-hidden="true" />
             <span className="font-label-caps text-label-caps text-secondary-container tracking-widest uppercase">
@@ -39,7 +40,7 @@ export function Hero() {
             alt="David Payán"
             width={200}
             height={200}
-            className="w-48 h-48 sm:w-60 sm:h-60 rounded-full object-cover border border-outline-variant/40"
+            className="w-56 h-56 sm:w-72 sm:h-72 rounded-full object-cover border border-outline-variant/40"
           />
           <div className="mt-4">
             <div className="font-label-caps text-label-caps tracking-widest text-on-surface uppercase">

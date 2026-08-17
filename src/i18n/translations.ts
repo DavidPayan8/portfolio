@@ -14,6 +14,7 @@ export interface UiText {
   heroRole: string;
   heroHeadline: string;
   heroIntro: string;
+  heroIntroSecondary: string;
   ctaWork: string;
   ctaContact: string;
   workHeading: string;
@@ -23,6 +24,7 @@ export interface UiText {
   modalCloseHint: string;
   aboutHeading: string;
   aboutParagraph: string;
+  aboutParagraphSecondary: string;
   educationHeading: string;
   contactHeading: string;
   contactParagraph: string;
@@ -46,10 +48,11 @@ export const translations: Record<Lang, UiText> = {
     navResume: "CV",
     badgeAvailable: "Disponible para nuevas oportunidades",
     heroRole: "Desarrollador Full Stack",
-    heroHeadline:
-      "Sistemas full stack, construidos de principio a fin — desde la pantalla del kiosco hasta el ERP que lo conecta todo.",
+    heroHeadline: "Me gusta entender cómo encajan las piezas.",
     heroIntro:
-      "Desarrollador Full Stack con más de 2 años de experiencia sacando proyectos adelante hasta producción, desde el análisis de requisitos hasta el despliegue y el mantenimiento. Construyo plataformas web, apps móviles multiplataforma y los sistemas conectados a ERP que los mantienen unidos — el tipo de software que tiene que funcionar de forma fiable en un restaurante real, en una obra real, todos los días.",
+      "Soy desarrollador Full Stack. Parto de los requisitos, pienso la solución, construyo el sistema y me encargo de que termine funcionando en producción.",
+    heroIntroSecondary:
+      "He trabajado con plataformas web, aplicaciones móviles, kioscos de autoservicio e integraciones con ERP. En este portfolio puedes ver algunos de esos proyectos y cómo están construidos.",
     ctaWork: "Ver el trabajo",
     ctaContact: "Contactar",
     workHeading: "Trabajos seleccionados",
@@ -59,7 +62,9 @@ export const translations: Record<Lang, UiText> = {
     modalCloseHint: "Pulsa Escape o haz clic fuera del vídeo para cerrar",
     aboutHeading: "Sobre mí",
     aboutParagraph:
-      "Desarrollador Full Stack en Kong Consulting (Sevilla), con más de 2 años llevando sistemas de la idea a producción — kioscos de autoservicio, apps móviles, integraciones con ERP. Me gusta responsabilizarme de un sistema de principio a fin: de la pizarra a algo que funciona sin supervisión. También pasé un verano (2023) en Londres, ganando soltura con el inglés y experiencia trabajando en equipos internacionales. Fuera del código soy entrenador de un equipo de fútbol infantil, aficionado novato a la filosofía, y de vez en cuando se me va el tiempo investigando cómo funcionan cosas cotidianas — cómo traza una ruta Google Maps, cómo triangula tu posición un satélite, cómo se mantiene la conexión con una nave en el espacio.",
+      "Soy desarrollador Full Stack en Kong Consulting (Sevilla), con más de dos años desarrollando sistemas desde los requisitos hasta producción. Me gusta especialmente entender bien un problema, pensar cómo encajan todas sus piezas y encontrar una solución que no solo funcione, sino que facilite realmente el trabajo de quien la utiliza. Si algo no lo sé, intento entenderlo: planteo una hipótesis, la investigo y aprendo por el camino.",
+    aboutParagraphSecondary:
+      "Fuera del código soy entrenador de un equipo juvenil, donde disfruto enseñando y buscando la forma de que otra persona consiga aplicar lo que le explico. También tengo cierta tendencia a investigar cómo funcionan las cosas cuando algo me parece especialmente complejo o eficiente. En 2023 viví un verano en Londres sin apenas saber inglés, una experiencia que me enseñó, sobre todo, a adaptarme, equivocarme y seguir aprendiendo.",
     educationHeading: "Formación",
     contactHeading: "Contacto",
     contactParagraph:
@@ -82,9 +87,11 @@ export const translations: Record<Lang, UiText> = {
     navResume: "Resume",
     badgeAvailable: "Available for new opportunities",
     heroRole: "Full Stack Developer",
-    heroHeadline: "Full stack systems, built end to end — from the kiosk screen to the ERP that ties it all together.",
+    heroHeadline: "I like understanding how the pieces fit together.",
     heroIntro:
-      "Full Stack Developer with 2+ years of experience taking projects all the way to production, from requirements analysis through deployment and maintenance. I build web platforms, cross-platform mobile apps, and the ERP-connected systems that tie them together — the kind of software that has to run reliably in a real restaurant, on a real job site, every day.",
+      "I'm a Full Stack Developer. I start from the requirements, think through the solution, build the system, and make sure it ends up running in production.",
+    heroIntroSecondary:
+      "I've worked with web platforms, mobile apps, self-service kiosks, and ERP integrations. You can see some of those projects in this portfolio, and how they're built.",
     ctaWork: "See the work",
     ctaContact: "Get in touch",
     workHeading: "Selected work",
@@ -94,7 +101,9 @@ export const translations: Record<Lang, UiText> = {
     modalCloseHint: "Press Escape or click outside the video to close",
     aboutHeading: "About",
     aboutParagraph:
-      "Full Stack Developer at Kong Consulting (Seville), with 2+ years taking systems from idea to production — self-service kiosks, mobile apps, ERP integrations. I like owning a system end to end: from the whiteboard to something that runs unattended. I also spent a summer (2023) in London, building fluency in English and experience working in international teams. Outside of code I coach a kids' football team, dabble in philosophy as a hobby, and every so often lose track of time looking into how everyday things work — how Google Maps plots a route, how a satellite triangulates your position, how a spacecraft stays connected.",
+      "I'm a Full Stack Developer at Kong Consulting (Seville), with more than two years building systems from requirements through to production. I especially like getting a problem right — understanding how all its pieces fit together and finding a solution that doesn't just work, but genuinely makes life easier for whoever uses it. When I don't know something, I try to understand it: I form a hypothesis, investigate it, and learn along the way.",
+    aboutParagraphSecondary:
+      "Outside of code I coach a youth team, where I enjoy teaching and figuring out how to help someone actually apply what I explain. I also have a bit of a habit of digging into how things work when something strikes me as especially complex or efficient. In 2023 I spent a summer in London barely speaking English — an experience that taught me, above all, to adapt, make mistakes, and keep learning.",
     educationHeading: "Education",
     contactHeading: "Contact",
     contactParagraph:
