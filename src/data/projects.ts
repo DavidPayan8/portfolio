@@ -61,7 +61,7 @@ export const projects: Project[] = [
     hasMedia: true,
     badgeVariant: "live",
     badge: { es: "Sistema en producción", en: "Live system" },
-    title: { es: "App de Fichaje Móvil (Flutter)", en: "Mobile Time Tracking (Flutter)" },
+    title: { es: "App de Fichaje Móvil (Flutter + PWA)", en: "Mobile Time Tracking (Flutter + PWA)" },
     description: {
       es: "App de fichaje por geolocalización reconstruida como app nativa multiplataforma en Flutter — mi propio port independiente del sistema original, publicado para iOS y Android. En uso, entre la versión Flutter y la PWA, por 18 empresas (media de 20-50 trabajadores cada una), la mayoría integradas con el ERP del cliente y algunas con panel de gestión propio e independiente.",
       en: "Geolocation-based clock-in app rebuilt as a native cross-platform Flutter app — my own independent port of the original system, shipped for iOS and Android. Between the Flutter app and the PWA version, in use by 18 companies (avg. 20-50 employees each), most integrated with the client's ERP and some with their own independent management panel.",
@@ -79,14 +79,15 @@ export const projects: Project[] = [
     badge: { es: "Proyecto personal", en: "Personal project" },
     title: { es: "SignageFlow — Gestor de Cartelería Digital", en: "SignageFlow — Digital Signage Manager" },
     description: {
-      es: "Plataforma multi-tenant de gestión de cartelería digital para pantallas en tienda: emparejamiento de pantallas por código, programaciones por horario y por zona, y control de acceso por organización y local. Una exploración personal en profundidad de una idea que en Kong Consulting solo pude abordar de forma parcial — arquitectura, modelo de datos y código propios, sin conexión con sistemas ni datos de cliente.",
-      en: "Multi-tenant digital signage management platform for in-store screens: code-based device pairing, schedule- and zone-based content, and organization/location-scoped access control. A deeper personal exploration of an idea I could only partially address at Kong Consulting — own architecture, data model, and code, with no connection to any client system or data.",
+      es: "Plataforma multi-tenant de gestión de cartelería digital para pantallas en tienda: emparejamiento de pantallas por código, programaciones por horario y por zona, y control de acceso por organización y local. El reproductor de las pantallas se empaqueta con Electron como ejecutable de escritorio. Proyecto personal — arquitectura, modelo de datos y código propios.",
+      en: "Multi-tenant digital signage management platform for in-store screens: code-based device pairing, schedule- and zone-based content, and organization/location-scoped access control. The screen player is packaged with Electron as a desktop executable. Personal project — own architecture, data model, and code.",
     },
     tags: [
       { label: "Angular", icon: "angular" },
       { label: "Node.js", icon: "nodedotjs" },
       { label: "TypeScript", icon: "typescript" },
       { label: "SQL Server" },
+      { label: "Electron", icon: "electron" },
       { label: { es: "Multi-tenant", en: "Multi-tenant" } },
     ],
   },
