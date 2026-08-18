@@ -61,8 +61,7 @@ export function getBrandColor(slug?: string): string {
 
 interface TechIconProps {
   slug: string;
-  /** Accepts a string so the backdrop mark can scale to its container ("100%"). */
-  size?: number | string;
+  size?: number;
   color?: boolean;
 }
 

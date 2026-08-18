@@ -27,9 +27,10 @@ const RESET: ReadonlyArray<readonly [string, string]> = [
  */
 interface TechPillProps {
   tag: Tag;
-  /** Tells the section which mark to bloom behind the pills. Only fires for
-   * tags that actually have a brand mark. */
-  onActivate?: (slug: string) => void;
+  /** Tells the section which command to type and what color to type it in.
+   * Fires for every tag, including ones with no brand mark (brand then falls
+   * back to the site accent). */
+  onActivate?: (label: string, brand: string) => void;
   onDeactivate?: () => void;
 }
 
@@ -46,6 +47,10 @@ export function TechPill({ tag, onActivate, onDeactivate }: TechPillProps) {
   );
 
   const label = typeof tag.label === "string" ? tag.label : tag.label[lang];
+  // Language-invariant lookup key — the same derivation TechSection uses for
+  // React's `key` prop. Using the (possibly Spanish) display `label` here
+  // would miss techCommands entries, which are keyed by the English form.
+  const commandKey = typeof tag.label === "string" ? tag.label : tag.label.en;
   const tooltip = tag.tooltip?.[lang];
   const icons = tag.icon ? (Array.isArray(tag.icon) ? tag.icon : [tag.icon]) : [];
   const brand = getBrandColor(icons[0]);
@@ -73,8 +78,8 @@ export function TechPill({ tag, onActivate, onDeactivate }: TechPillProps) {
   }
 
   function handlePointerEnter(event: ReactPointerEvent<HTMLSpanElement>) {
-    if (event.pointerType === "touch" || !onActivate || icons.length === 0) return;
-    onActivate(icons[0]);
+    if (event.pointerType === "touch" || !onActivate) return;
+    onActivate(commandKey, brand);
   }
 
   function handlePointerLeave() {

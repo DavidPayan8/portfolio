@@ -230,58 +230,54 @@
     perspective: 900px;
 }
 
-/* Stage holding the mark that blooms behind the pills. Padded deep enough that
-   the mark (sized below) fits whole — no overflow clipping here, so it can
-   never show up as a cropped fragment. */
-.tech-stage {
-    position: relative;
-    /* Tall enough to contain the 13rem mark plus the pill row, so nothing
-       overflows into the sections above or below. */
-    padding: 5.5rem 0;
+/* Terminal that types the hovered technology's command. Neutral window chrome
+   (no traffic-light red/yellow/green) to stay inside the site's one-accent
+   palette; the cursor and prompt pick up --brand from <TechTerminal>, which
+   falls back to the site accent while idle. */
+.tech-terminal {
+    --brand: #00d2fd;
+    width: 100%;
+    max-width: 30rem;
+    border: 1px solid #444748;
+    border-radius: 0.375rem;
+    background: #1b1b1c;
+    overflow: hidden;
 }
-.tech-backdrop {
-    position: absolute;
-    inset: 0;
+.tech-terminal-bar {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 6px;
+    padding: 10px 12px;
+    border-bottom: 1px solid #2a2a2a;
+}
+.tech-terminal-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #3a3a3a;
+}
+.tech-terminal-body {
+    padding: 14px 16px;
+    white-space: pre;
+    overflow-x: auto;
+    color: #c4c7c7;
+}
+.tech-terminal-prompt {
     color: var(--brand);
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    margin-right: 0.6em;
+    transition: color 0.35s ease;
 }
-.tech-backdrop.is-visible {
-    opacity: 0.22;
+.tech-terminal-cursor {
+    display: inline-block;
+    width: 0.55em;
+    height: 1em;
+    margin-left: 2px;
+    background: var(--brand);
+    vertical-align: -0.15em;
+    animation: techCursorBlink 1s step-end infinite;
+    transition: background-color 0.35s ease;
 }
-.tech-backdrop-shape {
-    display: block;
-    width: 13rem;
-    height: 13rem;
-    /* Bloom runs once on entry, then drift takes over the transform. Bloom is
-       `both` so its blur sticks after it finishes — drift never touches filter.
-       It resolves to a light blur so the mark still reads as a crisp logo
-       rather than a smear. */
-    animation: techBloom 0.9s cubic-bezier(0.16, 1, 0.3, 1) both,
-        techDrift 12s ease-in-out 0.9s infinite alternate;
-}
-@keyframes techBloom {
-    from {
-        transform: scale(0.45) rotate(-24deg);
-        filter: blur(18px);
-    }
-    to {
-        transform: scale(1) rotate(0deg);
-        filter: blur(2px);
-    }
-}
-@keyframes techDrift {
-    from {
-        transform: scale(1) rotate(0deg) translate3d(0, 0, 0);
-    }
-    to {
-        transform: scale(1.12) rotate(8deg) translate3d(0, -20px, 0);
-    }
+@keyframes techCursorBlink {
+    50% { opacity: 0; }
 }
 .tech-pill {
     --brand: #00d2fd;
@@ -334,8 +330,7 @@
 @media (prefers-reduced-motion: reduce) {
     .tech-pill { transform: none !important; }
     .tech-pill:hover .tech-pill-icon { transform: none; }
-    /* Keep the mark, drop the motion: no bloom, no endless drift. */
-    .tech-backdrop-shape { animation: none; filter: blur(2px); }
+    .tech-terminal-cursor { animation: none; }
     .reveal, .reveal.is-visible, .hero-reveal, .carousel-slide-right, .carousel-slide-left,
     .video-modal-backdrop, .video-modal {
         animation: none !important;
