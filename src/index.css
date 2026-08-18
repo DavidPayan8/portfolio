@@ -219,46 +219,67 @@
 }
 .lang-switch[aria-checked="true"] .lang-switch-thumb { transform: translateX(32px); }
 
-/* Technologies section: pills sit neutral until hovered, then the technology's
-   brand color (passed in as --brand by <TagPill>) sweeps across the pill from
-   the left, the label and icon invert to read on top of it, and the whole pill
-   lifts on a brand-tinted shadow. The fill is a gradient sized 0%→100% rather
-   than a pseudo-element, so the text never needs its own stacking context.
-   Every --brand value clears 4.5:1 against this dark text (see TechIcon). */
+/* Technologies section — pills tilt in 3D toward the pointer, with a glow in
+   that technology's brand color tracking the cursor across them. The tilt and
+   glow position come from --rx/--ry/--tx/--ty/--mx/--my, written by <TechPill>
+   inside a rAF; everything animated here is transform/opacity so it stays on
+   the compositor. The glow is a positioned child rather than a pseudo-element
+   so it can sit under the label without overflow clipping (which would
+   otherwise flatten the 3D transform). */
+.tech-grid {
+    perspective: 900px;
+}
 .tech-pill {
     --brand: #00d2fd;
-    background-image: linear-gradient(var(--brand), var(--brand));
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 0% 100%;
-    transition: background-size 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s ease, border-color 0.35s ease,
-        box-shadow 0.35s ease;
+    --brand-soft: rgba(0, 210, 253, 0.34);
+    --rx: 0deg;
+    --ry: 0deg;
+    --tx: 0px;
+    --ty: 0px;
+    --mx: 50%;
+    --my: 50%;
+    position: relative;
+    transform: perspective(700px) rotateX(var(--rx)) rotateY(var(--ry)) translate3d(var(--tx), var(--ty), 0);
+    /* Long, springy settle when the pointer leaves… */
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.45s ease,
+        color 0.35s ease;
+    will-change: transform;
 }
-.tech-pill svg {
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+.tech-pill-glow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    background: radial-gradient(90px circle at var(--mx) var(--my), var(--brand-soft), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+.tech-pill-content {
+    position: relative;
+    z-index: 1;
+}
+.tech-pill-icon {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s ease;
 }
 .tech-pill:hover {
-    /* Hold the label light until the sweep has almost covered the pill, then
-       flip it dark — otherwise it turns dark over the not-yet-filled half.
-       On mouse-out the base transition above reverts it immediately, which is
-       the right order for the sweep retreating. */
-    transition: background-size 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s ease 0.28s, border-color 0.35s ease,
-        box-shadow 0.35s ease;
-    background-size: 100% 100%;
-    transform: translateY(-4px);
-    color: #131313;
+    /* …but snappy while it's actually tracking the cursor. */
+    transition: transform 0.12s ease-out, border-color 0.35s ease, box-shadow 0.45s ease, color 0.35s ease;
+    color: #e5e2e1;
     border-color: var(--brand);
-    box-shadow: 0 10px 22px -10px var(--brand);
+    box-shadow: 0 16px 34px -16px var(--brand);
 }
-.tech-pill:hover svg {
-    transform: scale(1.15) rotate(-8deg);
+.tech-pill:hover .tech-pill-glow {
+    opacity: 1;
+}
+.tech-pill:hover .tech-pill-icon {
+    transform: scale(1.2) rotate(-8deg);
+    color: var(--brand);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .tech-pill:hover { transform: none; }
-    .tech-pill:hover svg { transform: none; }
+    .tech-pill { transform: none !important; }
+    .tech-pill:hover .tech-pill-icon { transform: none; }
     .reveal, .reveal.is-visible, .hero-reveal, .carousel-slide-right, .carousel-slide-left,
     .video-modal-backdrop, .video-modal {
         animation: none !important;
