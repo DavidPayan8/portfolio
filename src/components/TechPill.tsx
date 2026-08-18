@@ -27,9 +27,9 @@ const RESET: ReadonlyArray<readonly [string, string]> = [
  */
 interface TechPillProps {
   tag: Tag;
-  /** Reports the pill's center (viewport coords) so the section can bloom that
-   * technology's mark behind it. Only fires for tags that have a brand mark. */
-  onActivate?: (slug: string, centerX: number, centerY: number) => void;
+  /** Tells the section which mark to bloom behind the pills. Only fires for
+   * tags that actually have a brand mark. */
+  onActivate?: (slug: string) => void;
   onDeactivate?: () => void;
 }
 
@@ -74,8 +74,7 @@ export function TechPill({ tag, onActivate, onDeactivate }: TechPillProps) {
 
   function handlePointerEnter(event: ReactPointerEvent<HTMLSpanElement>) {
     if (event.pointerType === "touch" || !onActivate || icons.length === 0) return;
-    const rect = event.currentTarget.getBoundingClientRect();
-    onActivate(icons[0], rect.left + rect.width / 2, rect.top + rect.height / 2);
+    onActivate(icons[0]);
   }
 
   function handlePointerLeave() {

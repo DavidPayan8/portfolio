@@ -6,20 +6,13 @@ import { SectionHeading } from "./SectionHeading";
 import { TechBackdrop } from "./TechBackdrop";
 import { TechPill } from "./TechPill";
 
-interface ActiveTech {
-  slug: string;
-  x: number;
-  y: number;
-}
-
 /** Long enough for the backdrop's fade-out to finish before it unmounts. */
 const EXIT_MS = 500;
 
 export function TechSection({ isActive }: { isActive?: boolean }) {
   const { t } = useI18n();
-  const stageRef = useRef<HTMLDivElement>(null);
   const exitTimer = useRef<number | null>(null);
-  const [active, setActive] = useState<ActiveTech | null>(null);
+  const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const [leaving, setLeaving] = useState(false);
 
   useEffect(
@@ -29,23 +22,20 @@ export function TechSection({ isActive }: { isActive?: boolean }) {
     [],
   );
 
-  const handleActivate = useCallback((slug: string, centerX: number, centerY: number) => {
+  const handleActivate = useCallback((slug: string) => {
     if (exitTimer.current !== null) {
       window.clearTimeout(exitTimer.current);
       exitTimer.current = null;
     }
     setLeaving(false);
-    const stage = stageRef.current;
-    if (!stage) return;
-    const rect = stage.getBoundingClientRect();
-    setActive({ slug, x: centerX - rect.left, y: centerY - rect.top });
+    setActiveSlug(slug);
   }, []);
 
   const handleDeactivate = useCallback(() => {
     setLeaving(true);
     exitTimer.current = window.setTimeout(() => {
       exitTimer.current = null;
-      setActive(null);
+      setActiveSlug(null);
       setLeaving(false);
     }, EXIT_MS);
   }, []);
@@ -54,10 +44,10 @@ export function TechSection({ isActive }: { isActive?: boolean }) {
     <section id="tech" className="mt-stack-lg scroll-mt-28" aria-labelledby="tech-heading">
       <Reveal>
         <SectionHeading index="03" title={t.techHeading} id="tech-heading" isActive={isActive} />
-        <div ref={stageRef} className="tech-stage">
-          {active && (
+        <div className="tech-stage">
+          {activeSlug && (
             // Re-keying on slug restarts the bloom, so switching pills replays it.
-            <TechBackdrop key={active.slug} slug={active.slug} x={active.x} y={active.y} leaving={leaving} />
+            <TechBackdrop key={activeSlug} slug={activeSlug} leaving={leaving} />
           )}
           <div className="tech-grid relative z-[1] flex flex-wrap justify-center gap-3" aria-label={t.techHeading}>
             {skills.map((tag) => (
