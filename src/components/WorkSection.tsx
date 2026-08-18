@@ -8,7 +8,7 @@ export function WorkSection({ isActive }: { isActive?: boolean }) {
 
   return (
     <section id="work" className="scroll-mt-28" aria-labelledby="work-heading">
-      <Reveal>
+      <Reveal className="text-center">
         <SectionHeading index="01" title={t.workHeading} id="work-heading" isActive={isActive} />
         <ProjectCarousel />
       </Reveal>

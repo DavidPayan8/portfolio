@@ -2,13 +2,18 @@ interface SectionHeadingProps {
   index: string;
   title: string;
   id: string;
-  /** Highlights the rule while this section is the one being read. */
+  /** Highlights the rules while this section is the one being read. */
   isActive?: boolean;
 }
 
 export function SectionHeading({ index, title, id, isActive = false }: SectionHeadingProps) {
+  const ruleClass = `h-px flex-1 hidden sm:block transition-colors duration-500 ${
+    isActive ? "bg-secondary-container" : "bg-outline-variant/30"
+  }`;
+
   return (
-    <div className="flex items-center gap-4 mb-10">
+    <div className="flex items-center justify-center gap-4 mb-10">
+      <div className={ruleClass} aria-hidden="true" />
       <span
         className={`font-code-sm text-code-sm shrink-0 transition-colors duration-500 ${
           isActive ? "text-secondary-container" : "text-on-surface-variant"
@@ -17,15 +22,10 @@ export function SectionHeading({ index, title, id, isActive = false }: SectionHe
       >
         {index}
       </span>
-      <h2 id={id} className="font-headline-lg text-headline-lg text-on-surface">
+      <h2 id={id} className="font-headline-lg text-headline-lg text-on-surface text-center">
         {title}
       </h2>
-      <div
-        className={`h-px flex-1 hidden sm:block transition-colors duration-500 ${
-          isActive ? "bg-secondary-container" : "bg-outline-variant/30"
-        }`}
-        aria-hidden="true"
-      />
+      <div className={ruleClass} aria-hidden="true" />
     </div>
   );
 }

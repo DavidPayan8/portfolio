@@ -11,7 +11,7 @@ export function TechSection({ isActive }: { isActive?: boolean }) {
     <section id="tech" className="mt-stack-lg scroll-mt-28" aria-labelledby="tech-heading">
       <Reveal>
         <SectionHeading index="03" title={t.techHeading} id="tech-heading" isActive={isActive} />
-        <div className="flex flex-wrap gap-3" aria-label={t.techHeading}>
+        <div className="flex flex-wrap justify-center gap-3" aria-label={t.techHeading}>
           {skills.map((tag) => (
             <TagPill key={typeof tag.label === "string" ? tag.label : tag.label.en} tag={tag} variant="tech" />
           ))}

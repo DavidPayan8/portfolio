@@ -54,7 +54,7 @@ export function ProjectCard({ project }: { project: Project }) {
       {/* px-16 leaves room for the prev/next controls overlaid on the card edges */}
       <div className="relative z-10 px-16 py-8 md:py-10 bg-gradient-to-t from-background/95 via-background/85 to-background/60 pointer-events-none">
         {project.badge && (
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center justify-center gap-3 mb-4">
             <span
               className={`w-2 h-2 rounded-full ${isProgress ? "bg-outline-variant" : "bg-secondary-container animate-pulse"}`}
               aria-hidden="true"
@@ -78,7 +78,7 @@ export function ProjectCard({ project }: { project: Project }) {
         >
           {isExpanded ? t.seeLess : t.seeMore}
         </button>
-        <div className="flex flex-wrap gap-2" aria-label="Technologies used">
+        <div className="flex flex-wrap justify-center gap-2" aria-label="Technologies used">
           {project.tags.map((tag) => (
             <TagPill key={typeof tag.label === "string" ? tag.label : tag.label.en} tag={tag} />
           ))}

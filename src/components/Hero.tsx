@@ -5,7 +5,7 @@ export function Hero() {
   const { t } = useI18n();
 
   return (
-    <header className="mb-24 hero-reveal flex flex-col items-start text-left">
+    <header className="mb-24 hero-reveal flex flex-col items-center text-center">
       <img
         src="/photo.jpg"
         alt="David Payán"
@@ -22,7 +22,7 @@ export function Hero() {
       <p className="font-body-md text-body-md text-on-surface-variant">{t.heroIntro}</p>
       <p className="font-body-md text-body-md text-on-surface-variant mt-4">{t.heroIntroSecondary}</p>
 
-      <div className="flex flex-wrap gap-4 mt-8">
+      <div className="flex flex-wrap justify-center gap-4 mt-8">
         <a
           href="#work"
           className="border border-outline-variant text-secondary-container hover:border-secondary-container px-6 py-3 rounded font-label-caps text-label-caps transition-colors duration-300 uppercase"

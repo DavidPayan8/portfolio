@@ -44,7 +44,7 @@ export function ProjectCarousel() {
         </button>
       </div>
 
-      <div className="flex items-center gap-2 mt-6" role="tablist" aria-label="Projects">
+      <div className="flex items-center justify-center gap-2 mt-6" role="tablist" aria-label="Projects">
         {projects.map((p, i) => (
           <button
             key={p.id}
