@@ -51,9 +51,9 @@ export function TechTerminal({ command, brand }: TechTerminalProps) {
   return (
     <div className="tech-terminal" style={{ "--brand": brand } as CSSProperties} aria-hidden="true">
       <div className="tech-terminal-bar">
-        <span className="tech-terminal-dot" />
-        <span className="tech-terminal-dot" />
-        <span className="tech-terminal-dot" />
+        <span className="tech-terminal-dot tech-terminal-dot--red" />
+        <span className="tech-terminal-dot tech-terminal-dot--yellow" />
+        <span className="tech-terminal-dot tech-terminal-dot--green" />
       </div>
       <div className="tech-terminal-body font-code-sm text-code-sm">
         <span className="tech-terminal-prompt">$</span>

@@ -230,10 +230,9 @@
     perspective: 900px;
 }
 
-/* Terminal that types the hovered technology's command. Neutral window chrome
-   (no traffic-light red/yellow/green) to stay inside the site's one-accent
-   palette; the cursor and prompt pick up --brand from <TechTerminal>, which
-   falls back to the site accent while idle. */
+/* Terminal that types the hovered technology's command. Traffic-light window
+   dots, like a real terminal; the cursor and prompt pick up --brand from
+   <TechTerminal>, which falls back to the site accent while idle. */
 .tech-terminal {
     --brand: #00d2fd;
     width: 100%;
@@ -253,8 +252,10 @@
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: #3a3a3a;
 }
+.tech-terminal-dot--red { background: #ff5f56; }
+.tech-terminal-dot--yellow { background: #ffbd2e; }
+.tech-terminal-dot--green { background: #27c93f; }
 .tech-terminal-body {
     padding: 14px 16px;
     white-space: pre;

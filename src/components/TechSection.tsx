@@ -26,6 +26,9 @@ export function TechSection({ isActive }: { isActive?: boolean }) {
     <section id="tech" className="mt-stack-lg scroll-mt-28" aria-labelledby="tech-heading">
       <Reveal>
         <SectionHeading index="03" title={t.techHeading} id="tech-heading" isActive={isActive} />
+        <div className="flex justify-center mb-8">
+          <TechTerminal command={active?.command ?? ""} brand={active?.brand ?? ACCENT} />
+        </div>
         <div className="tech-grid flex flex-wrap justify-center gap-3" aria-label={t.techHeading}>
           {skills.map((tag) => (
             <TechPill
@@ -35,9 +38,6 @@ export function TechSection({ isActive }: { isActive?: boolean }) {
               onDeactivate={handleDeactivate}
             />
           ))}
-        </div>
-        <div className="flex justify-center mt-8">
-          <TechTerminal command={active?.command ?? ""} brand={active?.brand ?? ACCENT} />
         </div>
       </Reveal>
     </section>
