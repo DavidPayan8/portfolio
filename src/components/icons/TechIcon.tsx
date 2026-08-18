@@ -45,6 +45,16 @@ const COLOR_OVERRIDES: Partial<Record<TechIconSlug, string>> = {
 
 export type TechIconSlug = keyof typeof ICONS;
 
+/** Brand color for a slug, contrast-corrected for the dark background.
+ * Falls back to the site accent for tags that have no brand mark at all
+ * (SQL Server, REST APIs, ERP integration…). */
+export function getBrandColor(slug?: string): string {
+  if (!slug) return "#00d2fd";
+  const icon = ICONS[slug as TechIconSlug];
+  if (!icon) return "#00d2fd";
+  return COLOR_OVERRIDES[slug as TechIconSlug] ?? `#${icon.hex}`;
+}
+
 interface TechIconProps {
   slug: string;
   size?: number;

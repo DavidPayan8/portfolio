@@ -3,8 +3,13 @@ import { ContactSection } from "./components/ContactSection";
 import { Hero } from "./components/Hero";
 import { Nav } from "./components/Nav";
 import { SeoHead } from "./components/SeoHead";
+import { TechSection } from "./components/TechSection";
 import { WorkSection } from "./components/WorkSection";
+import { useActiveSection } from "./hooks/useActiveSection";
 import { I18nProvider, useI18n } from "./i18n/I18nContext";
+
+/** Module-level so the observer in useActiveSection isn't rebuilt every render. */
+const SECTION_IDS = ["work", "about", "tech", "contact"] as const;
 
 function SkipLink() {
   const { t } = useI18n();
@@ -19,6 +24,8 @@ function SkipLink() {
 }
 
 function AppShell() {
+  const activeSection = useActiveSection(SECTION_IDS);
+
   return (
     <>
       <SeoHead />
@@ -26,9 +33,10 @@ function AppShell() {
       <Nav />
       <main id="top" className="flex-grow pt-32 pb-stack-lg lg:max-w-[70%] mx-auto px-gutter w-full">
         <Hero />
-        <WorkSection />
-        <AboutSection />
-        <ContactSection />
+        <WorkSection isActive={activeSection === "work"} />
+        <AboutSection isActive={activeSection === "about"} />
+        <TechSection isActive={activeSection === "tech"} />
+        <ContactSection isActive={activeSection === "contact"} />
       </main>
     </>
   );

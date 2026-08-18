@@ -18,36 +18,33 @@ export function ProjectCarousel() {
 
   return (
     <div>
-      <div className="flex items-center justify-center gap-4 mb-6">
+      <div className="relative">
+        <div
+          key={`${project.id}-${direction}`}
+          className={direction === 1 ? "carousel-slide-right" : "carousel-slide-left"}
+        >
+          <ProjectCard project={project} />
+        </div>
+
         <button
           type="button"
           onClick={() => goTo(index - 1, -1)}
-          className="carousel-nav-btn"
+          className="carousel-nav-overlay carousel-nav-overlay--prev"
           aria-label={t.carouselPrevLabel}
         >
           <ChevronIcon direction="left" />
         </button>
-        <span className="font-code-sm text-code-sm text-on-surface-variant">
-          {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-        </span>
         <button
           type="button"
           onClick={() => goTo(index + 1, 1)}
-          className="carousel-nav-btn"
+          className="carousel-nav-overlay carousel-nav-overlay--next"
           aria-label={t.carouselNextLabel}
         >
           <ChevronIcon direction="right" />
         </button>
       </div>
 
-      <div
-        key={`${project.id}-${direction}`}
-        className={direction === 1 ? "carousel-slide-right" : "carousel-slide-left"}
-      >
-        <ProjectCard project={project} />
-      </div>
-
-      <div className="flex items-center justify-center gap-2 mt-6" role="tablist" aria-label="Projects">
+      <div className="flex items-center gap-2 mt-6" role="tablist" aria-label="Projects">
         {projects.map((p, i) => (
           <button
             key={p.id}

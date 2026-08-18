@@ -21,6 +21,9 @@ export function Nav() {
           <a className={NAV_LINK_CLASS} href="#about">
             {t.navAbout}
           </a>
+          <a className={NAV_LINK_CLASS} href="#tech">
+            {t.navTech}
+          </a>
           <a className={NAV_LINK_CLASS} href="#contact">
             {t.navContact}
           </a>
