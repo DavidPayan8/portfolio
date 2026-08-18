@@ -229,6 +229,59 @@
 .tech-grid {
     perspective: 900px;
 }
+
+/* Stage that clips the mark blooming behind the pills. The padding has to be
+   deep enough that the mark fits inside the clip — sized much larger than this
+   and you only ever see a cropped fragment, which reads as a smudge rather than
+   a logo — and that lifted pill shadows aren't cut off either. */
+.tech-stage {
+    position: relative;
+    overflow: hidden;
+    padding: 4.5rem 0;
+}
+.tech-backdrop {
+    position: absolute;
+    left: var(--bx);
+    top: var(--by);
+    width: 15rem;
+    height: 15rem;
+    margin: -7.5rem 0 0 -7.5rem;
+    color: var(--brand);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.tech-backdrop.is-visible {
+    opacity: 0.26;
+}
+.tech-backdrop-shape {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* Bloom runs once on entry, then drift takes over the transform. Bloom is
+       `both` so its blur sticks after it finishes — drift never touches filter. */
+    animation: techBloom 0.9s cubic-bezier(0.16, 1, 0.3, 1) both,
+        techDrift 12s ease-in-out 0.9s infinite alternate;
+}
+@keyframes techBloom {
+    from {
+        transform: scale(0.45) rotate(-24deg);
+        filter: blur(30px);
+    }
+    to {
+        transform: scale(1) rotate(0deg);
+        filter: blur(9px);
+    }
+}
+@keyframes techDrift {
+    from {
+        transform: scale(1) rotate(0deg) translate3d(0, 0, 0);
+    }
+    to {
+        transform: scale(1.12) rotate(8deg) translate3d(0, -20px, 0);
+    }
+}
 .tech-pill {
     --brand: #00d2fd;
     --brand-soft: rgba(0, 210, 253, 0.34);
@@ -280,6 +333,8 @@
 @media (prefers-reduced-motion: reduce) {
     .tech-pill { transform: none !important; }
     .tech-pill:hover .tech-pill-icon { transform: none; }
+    /* Keep the mark, drop the motion: no bloom, no endless drift. */
+    .tech-backdrop-shape { animation: none; filter: blur(9px); }
     .reveal, .reveal.is-visible, .hero-reveal, .carousel-slide-right, .carousel-slide-left,
     .video-modal-backdrop, .video-modal {
         animation: none !important;

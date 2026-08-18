@@ -25,7 +25,15 @@ const RESET: ReadonlyArray<readonly [string, string]> = [
  * glow tracking the cursor across it. Pointer maths is written straight to CSG
  * custom properties inside a rAF, so no React re-render happens per mouse move.
  */
-export function TechPill({ tag }: { tag: Tag }) {
+interface TechPillProps {
+  tag: Tag;
+  /** Reports the pill's center (viewport coords) so the section can bloom that
+   * technology's mark behind it. Only fires for tags that have a brand mark. */
+  onActivate?: (slug: string, centerX: number, centerY: number) => void;
+  onDeactivate?: () => void;
+}
+
+export function TechPill({ tag, onActivate, onDeactivate }: TechPillProps) {
   const { lang } = useI18n();
   const ref = useRef<HTMLSpanElement>(null);
   const frame = useRef<number | null>(null);
@@ -64,7 +72,14 @@ export function TechPill({ tag }: { tag: Tag }) {
     });
   }
 
+  function handlePointerEnter(event: ReactPointerEvent<HTMLSpanElement>) {
+    if (event.pointerType === "touch" || !onActivate || icons.length === 0) return;
+    const rect = event.currentTarget.getBoundingClientRect();
+    onActivate(icons[0], rect.left + rect.width / 2, rect.top + rect.height / 2);
+  }
+
   function handlePointerLeave() {
+    onDeactivate?.();
     const el = ref.current;
     if (!el) return;
     if (frame.current !== null) {
@@ -79,6 +94,7 @@ export function TechPill({ tag }: { tag: Tag }) {
       ref={ref}
       className="tech-pill inline-flex items-center font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-3 py-2"
       style={{ "--brand": brand, "--brand-soft": withAlpha(brand, 0.34) } as CSSProperties}
+      onPointerEnter={handlePointerEnter}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
       title={tooltip}
