@@ -35,12 +35,16 @@ const VIEW_BOX_OVERRIDES: Partial<Record<TechIconSlug, string>> = {
 
 /** A few brand colors don't hold up against our dark background (Angular's flat
  * swatch is near-black — WCAG contrast ~1:1). Lightened, same-hue stand-ins so every
- * icon stays legible while still reading as that brand's color at a glance. */
+ * icon stays legible while still reading as that brand's color at a glance.
+ * These double as the fill color behind dark text in the Technologies section,
+ * so each one clears 4.5:1 against #131313 in both directions. */
 const COLOR_OVERRIDES: Partial<Record<TechIconSlug, string>> = {
   angular: "#F0475F",
   flutter: "#3B9FE0",
   dart: "#2E97E0",
   dotnet: "#8C6DF0",
+  typescript: "#4A90D9",
+  electron: "#5FA3B0",
 };
 
 export type TechIconSlug = keyof typeof ICONS;
