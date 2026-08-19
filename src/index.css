@@ -219,60 +219,54 @@
 }
 .lang-switch[aria-checked="true"] .lang-switch-thumb { transform: translateX(32px); }
 
-/* Technologies section — pills tilt in 3D toward the pointer, with a glow in
-   that technology's brand color tracking the cursor across them. The tilt and
-   glow position come from --rx/--ry/--tx/--ty/--mx/--my, written by <TechPill>
-   inside a rAF; everything animated here is transform/opacity so it stays on
-   the compositor. The glow is a positioned child rather than a pseudo-element
-   so it can sit under the label without overflow clipping (which would
-   otherwise flatten the 3D transform). */
-.tech-grid {
-    perspective: 900px;
-}
-
-/* Terminal that types the hovered technology's command. Traffic-light window
-   dots, like a real terminal; the cursor and prompt pick up --brand from
-   <TechTerminal>, which falls back to the site accent while idle. */
-.tech-terminal {
-    --brand: #00d2fd;
+/* Technologies section — one console does double duty as the stack listing
+   (a fake `ls stack/`) and the reactive prompt line underneath it, instead of
+   a row of pills sitting next to a separate terminal card. Hovering a listed
+   file types its command on the prompt line, inside the same window — the
+   terminal drives the interaction rather than just reacting to it, and
+   there's exactly one boxed object instead of two. Full width (not a small
+   centered card) so it sits in the page's own content column like every
+   other section, rather than floating as an undersized widget. */
+.tech-console {
     width: 100%;
-    max-width: 30rem;
     border: 1px solid #444748;
     border-radius: 0.375rem;
     background: #1b1b1c;
     overflow: hidden;
 }
-.tech-terminal-bar {
+.tech-console-bar {
     display: flex;
     gap: 6px;
     padding: 10px 12px;
     border-bottom: 1px solid #2a2a2a;
 }
-.tech-terminal-dot {
+.tech-console-dot {
     width: 9px;
     height: 9px;
     border-radius: 50%;
 }
-.tech-terminal-dot--red { background: #ff5f56; }
-.tech-terminal-dot--yellow { background: #ffbd2e; }
-.tech-terminal-dot--green { background: #27c93f; }
-.tech-terminal-body {
-    padding: 14px 16px;
-    white-space: pre;
-    overflow-x: auto;
+.tech-console-dot--red { background: #ff5f56; }
+.tech-console-dot--yellow { background: #ffbd2e; }
+.tech-console-dot--green { background: #27c93f; }
+.tech-console-body {
+    padding: 18px 20px 22px;
     color: #c4c7c7;
 }
-.tech-terminal-prompt {
-    color: var(--brand);
+.tech-console-line {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+.tech-console-prompt {
+    color: var(--brand, #00d2fd);
     margin-right: 0.6em;
     transition: color 0.35s ease;
 }
-.tech-terminal-cursor {
+.tech-console-cursor {
     display: inline-block;
     width: 0.55em;
     height: 1em;
     margin-left: 2px;
-    background: var(--brand);
+    background: var(--brand, #00d2fd);
     vertical-align: -0.15em;
     animation: techCursorBlink 1s step-end infinite;
     transition: background-color 0.35s ease;
@@ -280,7 +274,25 @@
 @keyframes techCursorBlink {
     50% { opacity: 0; }
 }
-.tech-pill {
+
+/* The `ls` output: each entry tilts in 3D toward the pointer, with a glow in
+   that technology's brand color tracking the cursor across it. Tilt/glow
+   position come from --rx/--ry/--tx/--ty/--mx/--my, written by <TechFile>
+   inside a rAF; everything animated here is transform/opacity so it stays on
+   the compositor. The glow is a positioned child rather than a pseudo-element
+   so it can sit under the label without overflow clipping (which would
+   otherwise flatten the 3D transform). Indented to sit under the listed
+   text, not the "$" prompt, matching how `ls` output isn't itself prefixed. */
+.tech-console-listing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 22px;
+    margin: 14px 0 20px;
+    padding-left: 1.35em;
+    perspective: 900px;
+}
+.tech-file {
     --brand: #00d2fd;
     --brand-soft: rgba(0, 210, 253, 0.34);
     --rx: 0deg;
@@ -290,48 +302,49 @@
     --mx: 50%;
     --my: 50%;
     position: relative;
+    padding: 3px 4px;
+    margin: -3px -4px;
     transform: perspective(700px) rotateX(var(--rx)) rotateY(var(--ry)) translate3d(var(--tx), var(--ty), 0);
     /* Long, springy settle when the pointer leaves… */
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.45s ease,
-        color 0.35s ease;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s ease;
     will-change: transform;
 }
-.tech-pill-glow {
+.tech-file-glow {
     position: absolute;
-    inset: 0;
+    inset: -4px;
     z-index: 0;
-    border-radius: inherit;
-    background: radial-gradient(90px circle at var(--mx) var(--my), var(--brand-soft), transparent 70%);
+    border-radius: 4px;
+    background: radial-gradient(60px circle at var(--mx) var(--my), var(--brand-soft), transparent 70%);
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
 }
-.tech-pill-content {
+.tech-file-content {
     position: relative;
     z-index: 1;
 }
-.tech-pill-icon {
+.tech-file-icon {
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s ease;
 }
-.tech-pill:hover {
+.tech-file:hover {
     /* …but snappy while it's actually tracking the cursor. */
-    transition: transform 0.12s ease-out, border-color 0.35s ease, box-shadow 0.45s ease, color 0.35s ease;
-    color: #e5e2e1;
-    border-color: var(--brand);
-    box-shadow: 0 16px 34px -16px var(--brand);
+    transition: transform 0.12s ease-out, color 0.35s ease;
+    color: var(--brand);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
-.tech-pill:hover .tech-pill-glow {
+.tech-file:hover .tech-file-glow {
     opacity: 1;
 }
-.tech-pill:hover .tech-pill-icon {
+.tech-file:hover .tech-file-icon {
     transform: scale(1.2) rotate(-8deg);
     color: var(--brand);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .tech-pill { transform: none !important; }
-    .tech-pill:hover .tech-pill-icon { transform: none; }
-    .tech-terminal-cursor { animation: none; }
+    .tech-file { transform: none !important; }
+    .tech-file:hover .tech-file-icon { transform: none; }
+    .tech-console-cursor { animation: none; }
     .reveal, .reveal.is-visible, .hero-reveal, .carousel-slide-right, .carousel-slide-left,
     .video-modal-backdrop, .video-modal {
         animation: none !important;

@@ -20,21 +20,22 @@ const RESET: ReadonlyArray<readonly [string, string]> = [
   ["--my", "50%"],
 ];
 
-/**
- * A technology pill that tilts in 3D toward the pointer, with a brand-colored
- * glow tracking the cursor across it. Pointer maths is written straight to CSG
- * custom properties inside a rAF, so no React re-render happens per mouse move.
- */
-interface TechPillProps {
+interface TechFileProps {
   tag: Tag;
-  /** Tells the section which command to type and what color to type it in.
+  /** Tells the console which entry to `cat` and what color to type it in.
    * Fires for every tag, including ones with no brand mark (brand then falls
    * back to the site accent). */
   onActivate?: (label: string, brand: string) => void;
   onDeactivate?: () => void;
 }
 
-export function TechPill({ tag, onActivate, onDeactivate }: TechPillProps) {
+/**
+ * One entry in the `ls stack/` listing — same pointer-tracked 3D tilt and
+ * brand-colored glow as the old standalone pill, just styled as inline
+ * terminal output (no border/background of its own) since it now lives
+ * inside the console rather than floating next to it.
+ */
+export function TechFile({ tag, onActivate, onDeactivate }: TechFileProps) {
   const { lang } = useI18n();
   const ref = useRef<HTMLSpanElement>(null);
   const frame = useRef<number | null>(null);
@@ -56,7 +57,7 @@ export function TechPill({ tag, onActivate, onDeactivate }: TechPillProps) {
   const brand = getBrandColor(icons[0]);
 
   function handlePointerMove(event: ReactPointerEvent<HTMLSpanElement>) {
-    // Touch would "tilt" the pill on tap and leave it stuck that way.
+    // Touch would "tilt" the entry on tap and leave it stuck that way.
     if (event.pointerType === "touch") return;
     const el = ref.current;
     if (!el || frame.current !== null) return;
@@ -70,10 +71,10 @@ export function TechPill({ tag, onActivate, onDeactivate }: TechPillProps) {
 
       el.style.setProperty("--mx", `${x * 100}%`);
       el.style.setProperty("--my", `${y * 100}%`);
-      el.style.setProperty("--ry", `${(x - 0.5) * 26}deg`);
-      el.style.setProperty("--rx", `${(0.5 - y) * 20}deg`);
-      el.style.setProperty("--tx", `${(x - 0.5) * 8}px`);
-      el.style.setProperty("--ty", `${(y - 0.5) * 8}px`);
+      el.style.setProperty("--ry", `${(x - 0.5) * 22}deg`);
+      el.style.setProperty("--rx", `${(0.5 - y) * 16}deg`);
+      el.style.setProperty("--tx", `${(x - 0.5) * 6}px`);
+      el.style.setProperty("--ty", `${(y - 0.5) * 6}px`);
     });
   }
 
@@ -96,18 +97,18 @@ export function TechPill({ tag, onActivate, onDeactivate }: TechPillProps) {
   return (
     <span
       ref={ref}
-      className="tech-pill inline-flex items-center font-code-sm text-code-sm text-on-surface-variant border border-outline-variant/50 rounded px-3 py-2"
+      className="tech-file inline-flex items-center gap-1.5 text-on-surface-variant"
       style={{ "--brand": brand, "--brand-soft": withAlpha(brand, 0.34) } as CSSProperties}
       onPointerEnter={handlePointerEnter}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
       title={tooltip}
     >
-      <span className="tech-pill-glow" aria-hidden="true" />
-      <span className="tech-pill-content inline-flex items-center gap-2">
+      <span className="tech-file-glow" aria-hidden="true" />
+      <span className="tech-file-content inline-flex items-center gap-1.5">
         {icons.map((slug) => (
-          <span key={slug} className="tech-pill-icon inline-flex">
-            <TechIcon slug={slug} size={16} />
+          <span key={slug} className="tech-file-icon inline-flex">
+            <TechIcon slug={slug} size={14} />
           </span>
         ))}
         {label}

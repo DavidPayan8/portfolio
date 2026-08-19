@@ -2,7 +2,7 @@ import type { Tag } from "../data/tags";
 import { useI18n } from "../i18n/I18nContext";
 import { TechIcon } from "./icons/TechIcon";
 
-/** Static tag used on project cards. The interactive version lives in TechPill. */
+/** Static tag used on project cards. The interactive version lives in TechFile. */
 export function TagPill({ tag }: { tag: Tag }) {
   const { lang } = useI18n();
   const label = typeof tag.label === "string" ? tag.label : tag.label[lang];
