@@ -1,1 +1,8 @@
-Coloca aquí tus vídeos .mp4 (kiosk-ecosystem.mp4, flutter-time-tracking.mp4, work-order-app.mp4, redsys-integration.mp4). Ver README.md en la raíz del proyecto para instrucciones.
+Vídeos de cada proyecto: un .mp4 "completo" (con audio, para el modal) y un -preview.mp4 (sin audio, ~14s, recortado y escalado a 960px de ancho, para el fondo en bucle de la tarjeta). Ver README.md en la raíz del proyecto para instrucciones.
+
+En uso ahora mismo:
+- kiosk-ecosystem.mp4 / kiosk-ecosystem-preview.mp4
+- fichaje.mp4 / fichaje-preview.mp4
+- carteleria-digital.mp4 / carteleria-digital-preview.mp4
+
+Pendientes de vídeo: work-order-app, trabajo-por-metros.

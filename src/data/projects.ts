@@ -70,6 +70,8 @@ export const projects: Project[] = [
   {
     id: "mobile-time-tracking",
     hasMedia: true,
+    videoSrc: "/videos/fichaje-preview.mp4",
+    videoSrcFull: "/videos/fichaje.mp4",
     badgeVariant: "live",
     badge: { es: "Sistema en producción", en: "Live system" },
     title: { es: "App de Fichaje Móvil (Flutter + PWA)", en: "Mobile Time Tracking (Flutter + PWA)" },
@@ -89,7 +91,9 @@ export const projects: Project[] = [
   },
   {
     id: "signageflow",
-    hasMedia: false,
+    hasMedia: true,
+    videoSrc: "/videos/carteleria-digital-preview.mp4",
+    videoSrcFull: "/videos/carteleria-digital.mp4",
     badgeVariant: "progress",
     badge: { es: "Proyecto personal", en: "Personal project" },
     title: { es: "SignageFlow — Gestor de Cartelería Digital", en: "SignageFlow — Digital Signage Manager" },
